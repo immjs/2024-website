@@ -1,0 +1,29 @@
+.pretty_frame {
+    position: relative;
+    margin: 0.8rem;
+    box-sizing: border-box;
+    border-radius: 1.6rem;
+}
+
+.pretty_frame::before {
+    content: "";
+    position: absolute;
+    inset: -0.8rem; /* control the spread */
+    z-index: -1; /* place the element behind */
+    background: linear-gradient(
+        90deg,
+        hsl(217deg 92% 76%) 0%,
+        hsl(237deg 82% 83%) 10%,
+        hsl(267deg 66% 81%) 20%,
+        hsl(300deg 49% 79%) 30%,
+        hsl(326deg 77% 82%) 40%,
+        hsl(343deg 100% 85%) 50%,
+        hsl(356deg 100% 86%) 60%,
+        hsl(11deg 100% 85%) 70%,
+        hsl(22deg 100% 84%) 80%,
+        hsl(31deg 100% 84%) 90%,
+        hsl(41deg 86% 83%) 100%
+    ); /* your gradient here */;
+    filter: blur(0.2rem); /* control the blur */
+    border-radius: 2.4rem;
+}

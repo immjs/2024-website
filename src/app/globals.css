@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16px;
+  /* font-family: var(--font-dm-sans); */
+  @screen lg {
+    font-size: calc(100vw / 64);
+  }
+  @screen xl {
+    font-size: 20px;
+  }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.h1::before {
+    content: '# ' !important; /* Tailwind should start complying. */
+}
+.h2::before {
+    content: '## ' !important; /* Tailwind should start complying. */
+}
+
+.bright-bg {
+    color: rgb(var(--ctp-crust));
+    --ctp-text: var(--ctp-crust);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
