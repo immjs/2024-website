@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'black': '#000000',
+      },
       backgroundImage: {
         'zerotofull': 'linear-gradient(90deg, rgba(var(--ctp-text), 0) 0%, rgba(var(--ctp-text), 255) 100%)',
       },
@@ -18,6 +21,7 @@ const config: Config = {
         mono: ['var(--font-space-mono)'],
       },
       spacing: {
+        'minone': '-1.6rem',
         'zero': '0rem',
         'one': '1.6rem',
         'half': '0.8rem',
@@ -40,6 +44,10 @@ const config: Config = {
       },
       borderWidth: {
         'slim': '0.25em',
+      },
+      gap: {
+        'one': '0.8rem',
+        'half': '0.4rem'
       },
     },
   },

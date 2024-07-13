@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Space_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: '--font-space-grotesk',
-});
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ['400', '700'],
-  variable: '--font-space-mono',
-});
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: '--font-dm-sans',
-});
+import { dmSans, spaceGrotesk, spaceMono } from "@/components/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",

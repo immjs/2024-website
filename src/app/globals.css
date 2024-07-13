@@ -11,6 +11,21 @@ html {
   @screen xl {
     font-size: 20px;
   }
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--ctp-surface2));
+  border-radius: 0.5em;
+  border: calc(1em / 3) solid transparent;
+  background-clip: padding-box;
+  min-height: 1em;
+}
+::-webkit-scrollbar-thumb:hover {
+  border: calc(1em / 4) solid transparent;
 }
 
 * {
@@ -38,4 +53,17 @@ html, body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+input::placeholder {
+    @apply opacity-ghost;
+    color: inherit;
+}
+
+iframe {
+    border: 0px;
+}
+
+option {
+    background: inherit;
 }
