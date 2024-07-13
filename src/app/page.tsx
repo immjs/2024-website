@@ -6,7 +6,7 @@ import { Ghost, H1, H2, Small } from "@/components/typo";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode, useContext, useRef } from "react";
-import { grid1, grid2, grid3, skyBg } from './page.module.css';
+import pageStyles from './page.module.css';
 import { SendIcon } from "@/components/icons/send";
 import { getToken } from "@/components/csrf";
 
@@ -330,7 +330,7 @@ function BitsOfPersonality() {
   const token = getToken();
   return (
     <Section name="Bits of Personality">
-      <div className={`${grid1} gap-one`}>
+      <div className={`${pageStyles.grid1} gap-one`}>
         <Box title="2023/prologin.png" undertitle="34.3kb, 256 x 256" className="!bg-black">
           <div className="flex-1 bg-[url(/homepage/2023/prologin.png)] bg-contain bg-no-repeat bg-center"/>
         </Box>
@@ -358,7 +358,7 @@ function BitsOfPersonality() {
           </div>
         </form>
       </div>
-      <div className={`${grid2} gap-one`}>
+      <div className={`${pageStyles.grid2} gap-one`}>
         <Box title="40lines_personal_best.ttr" undertitle="5 days ago, 108 pieces @ 1.78 PPS">
           <div className="flex flex-col gap-half items-center justify-center flex-1 w-full">
             <p>My 40L Personal best:</p>
@@ -384,7 +384,7 @@ function BitsOfPersonality() {
 function MySocials() {
   return (
     <Section name="My Socials">
-      <div className={`${grid3} gap-one`}>
+      <div className={`${pageStyles.grid3} gap-one`}>
         <Link href="https://discord.com/">
           <Box title="://discord.com" className="bright-bg bg-cat-lavender">
             <div className="flex gap-half">
