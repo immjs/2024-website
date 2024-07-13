@@ -20,9 +20,9 @@ import { EMail } from "./socials/email";
 import { YouTube } from "./socials/youtube";
  
 // Font files can be colocated inside of `pages`
-export const hun2 = localFont({ src: './fonts/hun2.ttf' });
-export const config = localFont({ src: './fonts/cr.ttf' });
-export const proFontWindows = localFont({ src: './fonts/pfw.ttf' });
+const hun2 = localFont({ src: './fonts/hun2.ttf' });
+const config = localFont({ src: './fonts/cr.ttf' });
+const proFontWindows = localFont({ src: './fonts/pfw.ttf' });
 
 function Section({ name, children }: SectionProps) {
   return (
