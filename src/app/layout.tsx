@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'immjs.dev',
   description: 'A website made by Juliette, a french teenage developer!',
   openGraph: {
-    images: '/og.png',
+    images: '/metadata/og.png',
     siteName: 'immjs.dev',
     title: 'immjs.dev',
     description: 'A website made by Juliette, a french teenage developer!',
