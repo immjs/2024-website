@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { Pause } from "@/components/icons/pause";
 import { H1 } from "@/components/typo";
-import { getToken } from "@/components/csrf";
+import { useToken } from "@/components/csrf";
 
 export function Player({ csrf }: { csrf: string }) {
   const player = useRef<YouTubePlayer | null>(null);

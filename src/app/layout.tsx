@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { dmSans, spaceGrotesk, spaceMono } from "@/components/fonts";
-import { getTheme } from "@/components/theme";
-import { getToken } from "@/components/csrf";
 
-import { LightBtn } from "@/components/lightbtn";
+import { cookies } from "next/headers";
+import { ApplyContexts } from "./layout_contexts";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://immjs.dev'),
@@ -25,13 +24,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = getTheme();
-  const token = getToken();
+  const theme = cookies().get('theme')!.value;
+  const token = cookies().get('csrf')!.value;
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}>
-      <body className={`relative bg-cat-crust ${theme === 'light' ? 'cat-latte' : ''}`}>
-        {children}
-        <LightBtn theme={theme} token={token} />
+      <head>
+        <link rel="shortcut icon" href="/favicon.png" />
+      </head>
+      <body className="relative">
+        <ApplyContexts ogTheme={theme} csrf={token}>{children}</ApplyContexts>
       </body>
     </html>
   );

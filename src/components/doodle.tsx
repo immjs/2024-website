@@ -12,7 +12,7 @@ export function Doodle({ dx, dy, posx, posy, ...props }: { dx: number; dy: numbe
   styleObj[posy] = dy;
   
   return (
-    <Image {...otherProps} className={`lg:absolute ${className}`} style={styleObj} /> // eslint-disable-line jsx-a11y/alt-text
+    <Image {...otherProps} className={`lg:absolute ${className} select-none`} style={styleObj} draggable={false} /> // eslint-disable-line jsx-a11y/alt-text
   );
 }
 

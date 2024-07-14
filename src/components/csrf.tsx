@@ -1,3 +1,9 @@
-import { cookies } from "next/headers";
+"use client";
 
-export const getToken = () => cookies().get('csrf')!.value;
+import { createContext, useContext } from "react";
+
+export const tokenContext = createContext<string>('');
+
+export function useToken() {
+  return useContext(tokenContext);
+}
