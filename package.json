@@ -12,6 +12,7 @@
   "dependencies": {
     "@paralleldrive/cuid2": "^2.2.2",
     "@vercel/speed-insights": "^1.0.12",
+    "cookies-next": "^4.2.1",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
