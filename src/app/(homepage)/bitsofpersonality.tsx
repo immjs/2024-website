@@ -32,14 +32,14 @@ export function BitsOfPersonality() {
         <Box className="bg-[linear-gradient(0deg,rgb(var(--ctp-blue)),rgb(var(--ctp-sky)))] h-full bright-bg self-stretch" title="building.svg">
           <div className="flex-1 m-minone mt-0 bg-[url(/homepage/building.svg)] bg-no-repeat bg-[position:left_max(0px,100%)]" />
         </Box>
-        <form className="h-fit flex flex-col rounded-one gap-half bg-cat-surface0" method="POST" action="/submit">
+        <form className="h-fit flex flex-col rounded-one gap-half bg-cat-surface0" method="POST" action="/reply_status">
           <Box title="/sys/misc/status">
             <pre className="text-wrap">{"<immjs> The website's lookin good! (I think...)"}</pre>
           </Box>
-          <input hidden name="csrf" defaultValue={ token } disabled />
+          <input hidden name="csrf" value={ token } readOnly />
           <div className="flex gap-half">
             <Box hasBorder title="sendmail" htmlFor="reply" className="flex-1">
-              <input name="" className="appearance-none bg-transparent focus:outline-none font-mono w-full" type="text" placeholder="Reply to status..." id="reply"/>
+              <input name="reply" className="appearance-none bg-transparent focus:outline-none font-mono w-full" type="text" placeholder="Reply to status..." id="reply"/>
             </Box>
             <button className="p-one bright-bg bg-cat-mauve rounded-one">
               <SendIcon />
