@@ -1,13 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { getToken } from "./csrf";
-import { getTheme } from "./theme";
 
-export function LightBtn() {
-  const token = getToken();
-  const theme = getTheme();
-  const pathname = new URL(usePathname()).pathname;
+export function LightBtn({ theme, token }: { theme: string; token: string }) {
+  const pathname = usePathname();
   return (
     <form className="absolute top-one right-one" method="POST" action={`/change_theme?then=${encodeURIComponent(pathname)}`}>
       <input hidden name="csrf" value={token} readOnly />
