@@ -24,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = cookies().get('theme')!.value;
+  const theme = cookies().get('theme')?.value;
   const token = cookies().get('csrf')!.value;
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}>
@@ -32,7 +32,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.png" />
       </head>
       <body className="relative">
-        <ApplyContexts ogTheme={theme} csrf={token}>{children}</ApplyContexts>
+        <ApplyContexts ogTheme={theme || 'dark'} csrf={token}>{children}</ApplyContexts>
       </body>
     </html>
   );
