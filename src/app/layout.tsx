@@ -5,6 +5,7 @@ import { dmSans, spaceGrotesk, spaceMono } from "@/components/fonts";
 
 import { cookies } from "next/headers";
 import { ApplyContexts } from "./layout_contexts";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://immjs.dev'),
@@ -32,6 +33,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.png" />
       </head>
       <body className="relative">
+        <SpeedInsights />
         <ApplyContexts ogTheme={theme || 'dark'} csrf={token}>{children}</ApplyContexts>
       </body>
     </html>
