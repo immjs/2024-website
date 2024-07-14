@@ -20,6 +20,7 @@ export async function middleware(request: NextRequest) {
 
   const response = NextResponse.next({
     headers: {
+      'Cookies': request.cookies.toString(),
       'X-Url': request.url,
     },
   });
