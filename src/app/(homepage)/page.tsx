@@ -44,7 +44,7 @@ function Introduction () {
   return (
     <div className="flex flex-col items-center gap-16">
       <Small>
-        I try to be elegant but I end up being akward
+        I try to be elegant but I end up being awkward
       </Small>
       <div className="flex gap-two flex-col xl:flex-row w-full">
         <div className="flex justify-center">
