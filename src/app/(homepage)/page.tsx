@@ -18,6 +18,7 @@ import { Twitch } from "./socials/twitch";
 import { TetrIO } from "./socials/tetrio";
 import { EMail } from "./socials/email";
 import { YouTube } from "./socials/youtube";
+import { getTheme } from "@/components/theme";
  
 // Font files can be colocated inside of `pages`
 const hun2 = localFont({ src: './fonts/hun2.ttf' });
@@ -39,6 +40,7 @@ function Section({ name, children }: SectionProps) {
 }
 
 function Introduction () {
+  const theme = getTheme();
   return (
     <div className="flex flex-col items-center gap-16">
       <Small>
@@ -46,9 +48,9 @@ function Introduction () {
       </Small>
       <div className="flex gap-two flex-col xl:flex-row w-full">
         <div className="flex justify-center">
-          <PrettyFrame className="p-zero">
-            <Image alt="immjs logo" src="/homepage/logo.svg" width={224} height={224} className='max-sm:bg-[url(/homepage/doodles/intro_altern.svg)]' />
-            <Doodle alt="Doodle of me gripping the logo" src="/homepage/doodles/intro.svg" posx="left" posy="top" dx={-150} dy={-80} className="absolute max-sm:hidden" />
+          <PrettyFrame className="p-zero !bg-[#11111B]">
+            <Image alt="immjs logo" src="/homepage/logo.svg" width={224} height={224} className='max-sm:bg-[url(/homepage/doodles/dark/intro_altern.svg)]' />
+            <Doodle alt="Doodle of me gripping the logo" src={`/homepage/doodles/${theme}/intro.svg`} posx="left" posy="top" dx={-150} dy={-80} className="absolute max-sm:hidden" />
           </PrettyFrame>
         </div>
         <div className="lg:flex-1 flex flex-col gap-4">
@@ -59,6 +61,11 @@ function Introduction () {
           <p>I’m a 17 years old french student who codes for fun! My other hobbies are not really hobbies, more like variably lengthed obsessions of literally anything, such as The Minitel currently!</p>
         </div>
       </div>
+      <p className="w-full">
+        Please note that this website is a work in progress.<br/>
+        No pages but the homepage have been completed so far.<br/>
+        <Small>Thanks for understanding!</Small>
+      </p>
     </div>
   );
 }
@@ -79,7 +86,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="w-full flex flex-col gap-half xl:flex-row bg-cat-surface0 rounded-one">
-      <Box title={imageTitle} className="items-center xl:w-[288px]">
+      <Box title={imageTitle} className="items-center xl:w-[276px]">
         <div className="xl:flex-1 flex justify-center items-center">
           { image }
         </div>
@@ -106,7 +113,7 @@ function ProjectCard({
                 linkAddress,
                 linkName,
               }, idx) => (
-                <Link key={idx} href={linkAddress} title={linkName} className="flex-1">
+                <Link replace key={idx} href={linkAddress} title={linkName} className="flex-1">
                   <Box title={linkTitle} className={className} hasBorder={border}>
                     <div className="flex gap-half items-center">
                       <span className="font-bold">{ linkName }</span>
@@ -139,11 +146,12 @@ interface ProjectCardProps {
 }
 
 function MyProjects() {
+  const theme = getTheme();
   return (
     <Section name="My Projects">
       <ProjectCard
         imageTitle="plurriel.lnk"
-        image={<Image alt="Plurriel logo" src="/homepage/plurriel.lnk.svg" width={256} height={86} />}
+        image={<Image alt="Plurriel logo" src={`/homepage/plurriel.lnk_${theme}.svg`} width={256} height={86} />}
         childrenTitle="plurriel.md"
         title="Plurriel"
         shortDesc="An e-mail service"
@@ -168,7 +176,7 @@ function MyProjects() {
       />
       <ProjectCard
         imageTitle="leboneleve.shortcut"
-        image={<Image alt="Le Bon Élève logo" src="/homepage/leboneleve.shortcut.svg" width={192} height={192} />}
+        image={<Image alt="Le Bon Élève logo" src={`/homepage/leboneleve.shortcut_${theme}.svg`} width={192} height={192} />}
         childrenTitle="leboneleve.md"
         title="Le Bon Élève"
         shortDesc="A web-based proxy"
@@ -207,17 +215,18 @@ function MyProjects() {
           },
         ]}
       />
-      <DoodleResp alt="Doodle of me coding late at night" src="/homepage/doodles/projects.svg" height={384} posx="right" dx={-256} posy="bottom" dy={0} />
+      <DoodleResp alt="Doodle of me coding late at night" src={`/homepage/doodles/${theme}/projects.svg`} height={384} posx="right" dx={-256} posy="bottom" dy={0} />
     </Section>
   );
 }
 
 function BlogPostCard({ id, thumbnailAlt, title, tags, desc, blogpostColor, datePublished }: BlogPostCardProps) {
+  const theme = getTheme();
   return (
     <div className="w-full gap-half flex flex-col xl:flex-row-reverse bg-cat-surface0 rounded-one">
-      <Box title={`/blog/id:${id}/thumb.svg`} className="items-center">
+      <Box title={`/blog/id:${id}/thumb_${theme}.svg`} className="items-center">
         <div className="xl:flex-1 flex justify-center items-center">
-        <Image alt={thumbnailAlt} src={`/blog/id:${id}/thumb.svg`} width={192} height={192} />
+        <Image alt={thumbnailAlt} src={`/blog/id:${id}/thumb_${theme}.svg`} width={192} height={192} />
         </div>
       </Box>
       <div className="flex-1 flex flex-col gap-half">
@@ -234,7 +243,7 @@ function BlogPostCard({ id, thumbnailAlt, title, tags, desc, blogpostColor, date
           <Box title={`/blog/id:${id}/date`}>
             {datePublished}
           </Box>
-          <Link href={`/blog/id:${id}`} className="flex-1">
+          <Link replace href={`/blog/id:${id}`} className="flex-1">
             <Box className="bright-bg" style={{ backgroundColor: `rgb(var(--ctp-${blogpostColor}))` }} title={`/blog/id:${id}`}>
               <div className="flex gap-2 items-center">
                 <span className="font-bold">Read</span>
@@ -258,6 +267,7 @@ interface BlogPostCardProps {
 }
 
 function MyBlogPosts() {
+  const theme = getTheme();
   return (
     <Section name="My Blog Posts">
       <BlogPostCard
@@ -284,7 +294,7 @@ function MyBlogPosts() {
           <Arrow />
         </div>
       </Box>
-      <DoodleResp alt="Doodle of me annoying my friends away" src="/homepage/doodles/blogposts.svg" posx="left" dx={-256} posy="bottom" dy={0} />
+      <DoodleResp alt="Doodle of me annoying my friends away" src={`/homepage/doodles/${theme}/blogposts.svg`} posx="left" dx={-256} posy="bottom" dy={0} />
     </Section>
   );
 }
@@ -303,14 +313,15 @@ function PictureCard({ src, alt }: { src: string, alt: string }) {
 }
 
 function MyPhotography() {
+  const theme = getTheme();
   return (
     <Section name="My Photography">
       <div className="flex flex-col gap-one">
-        <div className="flex flex-col gap-one xl:flex-row xl:h-[calc(0.47*768px)]">
+        <div className="flex flex-col gap-one xl:flex-row xl:h-[calc(0.47*800px)]">
           <PictureCard src="/photography/fields.png" alt="Picture of fields seemingly leading to clouds, creating the illusion of altitude" />
           <PictureCard src="/photography/forest.png" alt="Picture of a forest with a rock" />
         </div>
-        <div className="flex flex-col gap-one xl:flex-row-reverse xl:h-[calc(0.47*768px)]">
+        <div className="flex flex-col gap-one xl:flex-row-reverse xl:h-[calc(0.47*800px)]">
           <PictureCard src="/photography/studyone.png" alt="Picture of the François Mitterand library after a cram evening" />
           <PictureCard src="/photography/litsea.png" alt="Picture of a brutalis building lit amongst blue skyscrapers" />
         </div>
@@ -321,12 +332,13 @@ function MyPhotography() {
           <Arrow />
         </div>
       </Box>
-      <DoodleResp alt="Doodle of me taking a picture" src="/homepage/doodles/photography.svg" posx="right" dx={-256} posy="bottom" dy={0} />
+      <DoodleResp alt="Doodle of me taking a picture" src={`/homepage/doodles/${theme}/photography.svg`} posx="right" dx={-256} posy="bottom" dy={0} />
     </Section>
   );
 }
 
 function BitsOfPersonality() {
+  const theme = getTheme();
   const token = getToken();
   return (
     <Section name="Bits of Personality">
@@ -371,21 +383,22 @@ function BitsOfPersonality() {
             <span className={`leading-[1em] ${proFontWindows.className}`}>@ 14075.42 TR</span>
           </div>
         </Box>
-        <Player />
+        <Player csrf={getToken()} />
         <Box title="rickroll.gif" undertitle="8.7mb, 320 x 240" className="!bg-black">
           <div className="xl:flex-1 bg-[url(/homepage/rickroll.webp)] bg-contain bg-no-repeat bg-center h-[256px]"></div>
         </Box>
-        <DoodleResp posx="left" dx={-192} posy="bottom" dy={0} src="/homepage/doodles/personality.svg" altImgSrc="/homepage/doodles/personality_altern.svg" alt="Doodle pointing at you because YOU JUST GOT RICKROLLED!" />
+        <DoodleResp posx="left" dx={-192} posy="bottom" dy={0} src={`/homepage/doodles/${theme}/personality.svg`} altImgSrc={`/homepage/doodles/${theme}/personality_altern.svg`} alt="Doodle pointing at you because YOU JUST GOT RICKROLLED!" />
       </div>
     </Section>
   );
 }
 
 function MySocials() {
+  const theme = getTheme();
   return (
     <Section name="My Socials">
       <div className={`${pageStyles.grid3} gap-one`}>
-        <Link href="https://discord.com/">
+        <Link replace href="https://discord.com/">
           <Box title="://discord.com" className="bright-bg bg-cat-lavender">
             <div className="flex gap-half">
               <Discord />
@@ -393,7 +406,7 @@ function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link href="https://github.com/immjs" className="bg-cat-text rounded-one">
+        <Link replace href="https://github.com/immjs" className="bg-cat-text rounded-one">
           <Box title="://github.com" className="bright-bg bg-transparent">
             <div className="flex gap-half">
               <GitHub />
@@ -401,7 +414,7 @@ function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link href="https://youtube.com/@immjs">
+        <Link replace href="https://youtube.com/@immjs">
           <Box title="://youtube.com" className="bright-bg bg-cat-red">
             <div className="flex gap-half">
               <YouTube />
@@ -409,7 +422,7 @@ function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link href="https://twitch.tv/immjs_">
+        <Link replace href="https://twitch.tv/immjs_">
           <Box title="://twitch.tv" className="bright-bg bg-cat-mauve">
             <div className="flex gap-half">
               <Twitch />
@@ -417,7 +430,7 @@ function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link href="https://ch.tetr.io/u/immjs">
+        <Link replace href="https://ch.tetr.io/u/immjs">
           <Box title="://ch.tetr.io" className="bright-bg bg-cat-green">
             <div className="flex gap-half">
               <TetrIO />
@@ -425,20 +438,20 @@ function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link href="mailto:mbfsa@immjs.dev" className="pointer-events-none cursor-default relative">
+        <Link replace href="mailto:mbfsa@immjs.dev" className="pointer-events-none cursor-default relative">
           <Box title="mailto:" hasBorder>
             <div className="flex gap-half">
               <EMail />
               immjs at here
             </div>
           </Box>
-          <Doodle className="xl:block" dx={0} dy={-192} posx="left" height={192} posy="bottom" src="/homepage/doodles/socials1.svg" alt="My E-Mail address which is immjs [at-sign] the domain of this webpage" />
+          <Doodle className="xl:block" dx={0} dy={-192} posx="left" height={192} posy="bottom" src={`/homepage/doodles/${theme}/socials1.svg`} alt="My E-Mail address which is immjs [at-sign] the domain of this webpage" />
         </Link>
       </div>
       {/* <Doodle className="absolute" dx={0} dy={-192} posx="left" height={192} posy="bottom" src="/homepage/doodles/socials1.svg" alt="My E-Mail address which is immjs [at-sign] the domain of this webpage" /> */}
-      <Doodle className="hidden lg:flex justify-end" dx={0} dy={-320} posx="right" width={320} height={320} posy="bottom" src="/homepage/doodles/socials2.svg" alt={`"Pourquoi tu l'as écrite comme ça?" "Pour éviter les bots (spam etc...)" "Ah ouais logique"`} />
+      <Doodle className="hidden lg:flex justify-end" dx={0} dy={-320} posx="right" width={320} height={320} posy="bottom" src={`/homepage/doodles/${theme}/socials2.svg`} alt={`"Pourquoi tu l'as écrite comme ça?" "Pour éviter les bots (spam etc...)" "Ah ouais logique"`} />
       <div className="lg:hidden flex justify-end">
-        <Doodle dx={0} dy={-320} posx="right" width={320} height={320} posy="bottom" src="/homepage/doodles/socials2.svg" alt={`"Pourquoi tu l'as écrite comme ça?" "Pour éviter les bots (spam etc...)" "Ah ouais logique"`} />
+        <Doodle dx={0} dy={-320} posx="right" width={320} height={320} posy="bottom" src={`/homepage/doodles/${theme}/socials2.svg`} alt={`"Pourquoi tu l'as écrite comme ça?" "Pour éviter les bots (spam etc...)" "Ah ouais logique"`} />
       </div>
     </Section>
   );
@@ -446,8 +459,8 @@ function MySocials() {
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center px-6 py-[calc(50vh-125px-4.8rem)] pb-0 xl:pb-[320px] ml-4">
-      <main className="flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[calc(768px-2em)]">
+    <div className="flex justify-center items-center px-6 py-[calc(50vh-125px-4.8rem)] pb-0 xl:pb-[320px] gutter-both-edges">
+      <main className="flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[800px]">
         <Introduction />
         <MyProjects />
         <MyBlogPosts />

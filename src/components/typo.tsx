@@ -1,18 +1,18 @@
 import { HTMLProps } from "react";
 
 export function H1({ ...props }: HTMLProps<HTMLSpanElement>) {
-  const { children, ...otherProps } = props;
+  const { children, className, ...otherProps } = props;
   return (
-    <span {...otherProps} className={`h1 before:whitespace-pre before:inline before:opacity-ghost text-huge font-heading font-bold`}>
+    <span {...otherProps} className={`h1 before:whitespace-pre before:inline before:opacity-ghost text-huge font-heading font-bold ${className}`}>
       { children }<br/>
     </span>
   );
 }
 
 export function H2({ ...props }: HTMLProps<HTMLSpanElement>) {
-  const { children, ...otherProps } = props;
+  const { children, className, ...otherProps } = props;
   return (
-    <span {...otherProps} className={`h2 before:whitespace-pre before:inline before:opacity-ghost text-big font-heading`}>
+    <span {...otherProps} className={`h2 before:whitespace-pre before:inline before:opacity-ghost text-big font-heading ${className}`}>
       { children }<br/>
     </span>
   );

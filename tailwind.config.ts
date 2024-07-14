@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'lg': '1040px',
+        'xl': '1352px',
+      },
       colors: {
         'black': '#000000',
       },
@@ -25,7 +29,7 @@ const config: Config = {
         'zero': '0rem',
         'one': '1.6rem',
         'half': '0.8rem',
-        'two': '2rem',
+        'two': '3.2rem',
       },
       borderRadius: {
         'one': '1.6rem',

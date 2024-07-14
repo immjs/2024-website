@@ -3,18 +3,19 @@
 @tailwind utilities;
 
 html {
-  font-size: 16px;
-  /* font-family: var(--font-dm-sans); */
-  @screen lg {
-    font-size: calc(100vw / 64);
-  }
-  @screen xl {
-    font-size: 20px;
-  }
-  overflow-x: hidden;
+    font-size: 16px;
+    /* font-family: var(--font-dm-sans); */
+    @screen xl {
+        font-size: 20px;
+    }
 }
 
-::-webkit-scrollbar {
+.cat-latte .\!bg-black {
+    color: rgb(var(--ctp-crust));
+    --ctp-text: var(--ctp-crust);
+}
+
+/* ::-webkit-scrollbar {
   width: 1em;
 }
 ::-webkit-scrollbar-thumb {
@@ -26,10 +27,11 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   border: calc(1em / 4) solid transparent;
-}
+} */
 
 * {
     box-sizing: border-box;
+    scrollbar-width: 16px;
 }
 
 .h1::before {
@@ -67,3 +69,24 @@ iframe {
 option {
     background: inherit;
 }
+
+/* html {
+    overflow-y: overlay;
+} */
+
+body {
+    overflow: auto;
+    scrollbar-gutter: stable both-edges;
+}
+/*
+@-moz-document url-prefix() {
+    .gutter-both-edges {
+        margin-right: unset;
+    }
+}
+
+@supports (-webkit-hyphens: none) and (not ((-webkit-marquee-repetition:infinite) and (object-fit:fill))) {
+    .gutter-both-edges {
+        margin-right: unset;
+    }
+} */

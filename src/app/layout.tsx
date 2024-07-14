@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { dmSans, spaceGrotesk, spaceMono } from "@/components/fonts";
+import { getTheme } from "@/components/theme";
+import { getToken } from "@/components/csrf";
+
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,10 +17,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = getTheme();
+  const token = getToken();
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}>
-      <body className="bg-cat-crust">
+      <body className={`relative bg-cat-crust ${theme === 'light' ? 'cat-latte' : ''}`}>
         {children}
+        <form className="absolute top-one right-one" method="POST" action={`/change_theme?then=${encodeURIComponent(headers().get('X-URL')!)}`}>
+          <input hidden name="csrf" value={token} readOnly />
+          <button className={`h-two w-two pl-one rounded-one ${theme === 'light' ? 'bg-cat-yellow' : 'bg-cat-text'}`}>
+            {theme === 'dark' && <div className="h-one w-one bg-cat-crust rounded-l-half" />}
+          </button>
+        </form>
       </body>
     </html>
   );

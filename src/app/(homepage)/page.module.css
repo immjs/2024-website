@@ -19,7 +19,7 @@
     @screen lg {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 166px min-content;
+        grid-template-rows: 256px min-content;
         grid-template-areas:    'a b c'
                                 'e e d';
     }
@@ -67,6 +67,6 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:    'a b c'
-                                'f d e';
+                                'd f e';
     }
 }
