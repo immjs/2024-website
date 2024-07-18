@@ -11,6 +11,9 @@ export function Introduction () {
       <Small>
         I try to be elegant but I end up being awkward
       </Small>
+      <h1 className="hidden">
+        Introduction
+      </h1>
       <div className="flex gap-two flex-col xl:flex-row w-full">
         <div className="flex justify-center">
           <PrettyFrame className="p-zero !bg-[#11111B]">

@@ -2,7 +2,7 @@ import { useId } from "react";
 
 function ArrowTip () {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-[-1px]">
       <path d="M0 12H20M20 12L12 4M20 12L12 20" style={{ stroke: 'rgb(var(--ctp-text))' }} strokeWidth="0.375em" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );

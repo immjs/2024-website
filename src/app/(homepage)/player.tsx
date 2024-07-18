@@ -8,7 +8,7 @@ import { Prev } from "@/components/icons/prev";
 import { Next } from "@/components/icons/next";
 import { ChevDown } from "@/components/icons/chev_down";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Pause } from "@/components/icons/pause";
 import { H1 } from "@/components/typo";
 import { useToken } from "@/components/csrf";
@@ -50,6 +50,8 @@ export function Player({ csrf }: { csrf: string }) {
   const [curVideoName, setCurVideoName] = useState('');
   const [curVideoUrl, setCurVideoUrl] = useState('');
 
+  const iframeRefHack = useRef<YouTube | null>(null);
+
   const onPlayerStateChange: YouTubeProps['onStateChange'] = (event) => {
     if (event.data === YouTube.PlayerState.PLAYING) {
       if (!isPlaying) {
@@ -73,6 +75,9 @@ export function Player({ csrf }: { csrf: string }) {
     event.target.setLoop(true);
   };
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+    const iframe = document.querySelector('iframe');
+    // console.log(iframe);
+    if (iframe) iframe.tabIndex = -1;
     // access to player in all event handlers via event.target
     if (!isPlaying) event.target.mute();
     event.target.playVideo();
@@ -100,14 +105,33 @@ export function Player({ csrf }: { csrf: string }) {
     },
   };
 
+  // useEffect(() => {
+  //   const actualContainer = iframeRefHack.current?.container;
+  //   console.log(actualContainer?.children);
+  //   // @ts-ignore
+  //   window.actualContainer = actualContainer;
+  //   if (!actualContainer) return;
+  //   const containerObserver = new MutationObserver((mutationList, observer) => {
+  //     if (actualContainer.children.length >= 1) {
+  //       const iframe = actualContainer.children[0] as HTMLIFrameElement;
+  //       console.log(iframe);
+  //       iframe.tabIndex = -1;
+  //     }
+  //   });
+  //   containerObserver.observe(actualContainer, { childList: true, subtree: true });
+  //   // return () => containerObserver.disconnect();
+  // }, [iframeRefHack?.current?.container?.children]);
+  
   return (
     <div className="flex flex-col bg-cat-surface0 rounded-one gap-half">
       <div className="relative bright-bg">
-        <Box className="bg-transparent z-10 absolute rounded-one text-base pointer-events-none" title="set_playlist" intendedForUser htmlFor="media_player_select">
-          <div className="z-10w-full flex justify-end">
-            <ChevDown />
-          </div>
-        </Box>
+        <label htmlFor="media_player_select">
+          <Box className="bg-transparent z-10 absolute rounded-one text-base pointer-events-none" title="set_playlist" intendedForUser>
+            <div className="z-10w-full flex justify-end">
+              <ChevDown />
+            </div>
+          </Box>
+        </label>
         <select
           className="cursor-pointer bg-cat-red flex-1 absolute inset-0 p-one rounded-one appearance-none focus:outline-none font-bold" 
           id="media_player_select"
@@ -136,7 +160,7 @@ export function Player({ csrf }: { csrf: string }) {
           </noscript>
           <div className="h-full relative">
             <div className="h-full pointer-events-none flex justify-center flex-col blur-[20px] mx-[-50px]">
-              <YouTube opts={opts} onReady={onPlayerReady} onStateChange={onPlayerStateChange} />
+              <YouTube ref={iframeRefHack} opts={opts} onReady={onPlayerReady} onStateChange={onPlayerStateChange} />
             </div>
             <Link
               className="!absolute cursor-pointer left-0 right-0 top-0 appearance-none focus:outline-none text-left"

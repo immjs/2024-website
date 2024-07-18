@@ -38,9 +38,11 @@ export function BitsOfPersonality() {
           </Box>
           <input hidden name="csrf" value={ token } readOnly />
           <div className="flex gap-half">
-            <Box hasBorder title="sendmail" htmlFor="reply" className="flex-1">
-              <input name="reply" className="appearance-none bg-transparent focus:outline-none font-mono w-full" type="text" placeholder="Reply to status..." id="reply"/>
-            </Box>
+            <label htmlFor="reply" className="flex-1 cursor-pointer before:content-['sendmail'] before:absolute before:font-mono before:opacity-ghost before:text-small before:pl-one before:pt-[calc(0.5lh-0.4em)] before:inset-0 before:z-20 relative">
+              <div className="">
+                <input name="reply" className="p-[calc(1.6rem-4px)] bg-cat-base appearance-none focus:outline-none font-mono w-full rounded-one border-4 border-cat-text border-solid" type="text" placeholder="Reply to status..." id="reply"/>
+              </div>
+            </label>
             <button className="p-one bright-bg bg-cat-mauve rounded-one">
               <SendIcon />
             </button>

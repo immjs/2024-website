@@ -1,12 +1,12 @@
 import { HTMLProps, ReactNode } from "react";
 import { Small } from "./typo";
 
-export function Box<U extends HTMLLabelElement>({ actAs, title, intendedForUser, className, hasBorder, children, undertitle, ...others }: BoxProps & HTMLProps<U>) {
+export function Box({ actAs, title, intendedForUser, className, hasBorder, children, undertitle, ...others }: BoxProps & HTMLProps<HTMLDivElement>) {
   if (hasBorder) {
     className = `before:absolute before:inset-0 before:border-slim before:border-cat-text before:block before:rounded-one ${className || ''}`;
   }
   return (
-    <label {...others} className={`flex flex-col px-one ${!undertitle && 'pb-one'} rounded-one bg-cat-base relative overflow-hidden ${className || ''}`}>
+    <div {...others} className={`flex flex-col px-one ${!undertitle && 'pb-one'} rounded-one bg-cat-base relative overflow-hidden ${className || ''}`}>
       <div className="h-one shrink-0 w-full flex items-center pointer-events-none select-none">
         {
           intendedForUser
@@ -24,7 +24,7 @@ export function Box<U extends HTMLLabelElement>({ actAs, title, intendedForUser,
           </div>
         )
       }
-    </label>
+    </div>
   );
 }
 

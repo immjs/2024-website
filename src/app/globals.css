@@ -78,6 +78,23 @@ body {
     overflow: auto;
     scrollbar-gutter: stable both-edges;
 }
+
+/* 
+*:focus {
+    animation: none;
+} */
+.cat-latte *:focus-visible {
+    outline: none;
+    animation: 0.5s infinite alternate blink ease;
+}
+@keyframes blink {
+    0% {
+        filter: brightness(0.5);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
 /*
 @-moz-document url-prefix() {
     .gutter-both-edges {

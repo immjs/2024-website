@@ -24,8 +24,8 @@ export function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link replace href="https://github.com/immjs" className="bg-cat-text rounded-one">
-          <Box title="://github.com" className="bright-bg bg-transparent">
+        <Link replace href="https://github.com/immjs" className={`rounded-one ${theme === 'dark' ? 'bright-bg bg-cat-text' : 'bg-cat-base'}`}>
+          <Box title="://github.com" className="bg-transparent">
             <div className="flex gap-half">
               <GitHub />
               immjs
@@ -56,7 +56,7 @@ export function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link replace href="mailto:mbfsa@immjs.dev" className="pointer-events-none cursor-default relative">
+        <Link replace href="mailto:mbfsa@immjs.dev" className="pointer-events-none cursor-default relative" tabIndex={-1}>
           <Box title="mailto:" hasBorder>
             <div className="flex gap-half">
               <EMail />
