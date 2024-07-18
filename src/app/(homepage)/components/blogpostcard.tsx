@@ -18,8 +18,8 @@ export function BlogPostCard({ id, thumbnailAlt, title, tags, desc, blogpostColo
         <Box title={`/blog/id:${id}/desc`} className="items-center">
           <div className="flex flex-col gap-4">
             <span>
-              <H1>{title}</H1>
-              <H2>Tags: {tags.join(', ')}</H2>
+              <H1 semantic>{title}</H1>
+              <H2 semantic>Tags: {tags.join(', ')}</H2>
             </span>
             <p>{desc}</p>
           </div>

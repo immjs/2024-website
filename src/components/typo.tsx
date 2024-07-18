@@ -1,6 +1,6 @@
 import { HTMLProps } from "react";
 
-export function H1({ ...props }: HTMLProps<HTMLParagraphElement> & { semantic: boolean }) {
+export function H1({ ...props }: HTMLProps<HTMLParagraphElement> & { semantic?: boolean }) {
   const { children, className, semantic, ...otherProps } = props;
   const Tag = semantic ? 'h2' : 'p';
   return (
@@ -10,7 +10,7 @@ export function H1({ ...props }: HTMLProps<HTMLParagraphElement> & { semantic: b
   );
 }
 
-export function H2({ ...props }: HTMLProps<HTMLParagraphElement> & { semantic: boolean }) {
+export function H2({ ...props }: HTMLProps<HTMLParagraphElement> & { semantic?: boolean }) {
   const { children, className, semantic, ...otherProps } = props;
   const Tag = semantic ? 'h3' : 'p';
   return (

@@ -23,8 +23,8 @@ export function Introduction () {
         </div>
         <div className="lg:flex-1 flex flex-col gap-4">
           <span>
-            <H1>Hi, I&apos;m Juliet! <span className="opacity-ghost">(she/her)</span></H1>
-            <H2>(but please call me Informa)</H2>
+            <H1 semantic>Hi, I&apos;m Juliet! <span className="opacity-ghost">(she/her)</span></H1>
+            <H2 semantic>(but please call me Informa)</H2>
           </span>
           <p>I’m a 17 years old french student who codes for fun! My other hobbies are not really hobbies, more like variably lengthed obsessions of literally anything, such as The Minitel currently!</p>
         </div>

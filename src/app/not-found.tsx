@@ -8,9 +8,9 @@ import Link from "next/link";
 
 export default function Error() {
   return (
-    <div className="flex justify-center items-center px-6 py-[calc(50vh-125px)] pb-0">
+    <div className="flex justify-center items-center px-6 py-[calc(50vh-125px)]">
       <main className="flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[800px]">
-        <div className="flex gap-two items-center">
+        <div className="flex xl:flex-row flex-col gap-two items-center">
           <div className="w-[256px] h-[256px] p-half">
             <div className="w-full h-full rounded-one flex items-center shadow-[0px_0px_0.8rem_0.8rem] p-zero">
               <div className="flex-1 flex justify-center items-center font-mono text-6xl font-bold leading-[0.5]">
@@ -23,8 +23,8 @@ export default function Error() {
           </div>
           <div className="flex-1 flex justify-center flex-col gap-4">
             <span>
-              <H1>Not found</H1>
-              <H2>We don&apos;t have the ressource you&apos;re looking for.</H2>
+              <H1 semantic>Not found</H1>
+              <H2 semantic>We don&apos;t have the ressource you&apos;re looking for.</H2>
             </span>
             <p>I did tell you the website was a work in progress</p>
             <Link href="/" title="Go back to homepage" className="w-full">

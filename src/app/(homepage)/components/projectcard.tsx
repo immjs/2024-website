@@ -24,8 +24,8 @@ export function ProjectCard({
         <Box title={childrenTitle} className="items-center">
           <div className="flex flex-col gap-4">
             <span>
-              <H1>{ title }</H1>
-              <H2>{ shortDesc }</H2>
+              <H1 semantic>{ title }</H1>
+              <H2 semantic>{ shortDesc }</H2>
             </span>
             <p>
               { longDesc }
