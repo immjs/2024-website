@@ -83,8 +83,20 @@ body {
 *:focus {
     animation: none;
 } */
-.cat-latte *:focus-visible {
+*:focus-visible {
     outline: none;
+    animation: 0.5s infinite alternate blinklight ease;
+}
+@keyframes blinklight {
+    0% {
+        filter: brightness(2);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.cat-latte *:focus-visible {
     animation: 0.5s infinite alternate blink ease;
 }
 @keyframes blink {

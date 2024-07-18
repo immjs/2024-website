@@ -163,12 +163,12 @@ export function Player({ csrf }: { csrf: string }) {
               <YouTube ref={iframeRefHack} opts={opts} onReady={onPlayerReady} onStateChange={onPlayerStateChange} />
             </div>
             <Link
-              className="!absolute cursor-pointer left-0 right-0 top-0 appearance-none focus:outline-none text-left"
+              className="opacity-ghost hover:opacity-full focus-visible:opacity-full !absolute cursor-pointer left-0 right-0 top-0 appearance-none focus:outline-none text-left"
               href={curVideoUrl}
               target="_blank"
               title="Click to open"
             >
-              <Box className="opacity-ghost hover:opacity-full rounded-t-none" title="/sys/misc/now_playing" undertitle="Click to open">
+              <Box className="rounded-t-none" title="/sys/misc/now_playing" undertitle="Click to open">
                 <b>{ curVideoAuthor }</b>
                 <p>{ curVideoName }</p>
               </Box>

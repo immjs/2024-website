@@ -24,8 +24,8 @@ export function MySocials() {
             </div>
           </Box>
         </Link>
-        <Link replace href="https://github.com/immjs" className={`rounded-one ${theme === 'dark' ? 'bright-bg bg-cat-text' : 'bg-cat-base'}`}>
-          <Box title="://github.com" className="bg-transparent">
+        <Link replace href="https://github.com/immjs" className={`rounded-one ${theme === 'dark' ? 'bg-cat-text' : 'bg-cat-base'}`}>
+          <Box title="://github.com" className={`bg-transparent ${theme === 'dark' ? 'bright-bg' : ''}`}>
             <div className="flex gap-half">
               <GitHub />
               immjs
