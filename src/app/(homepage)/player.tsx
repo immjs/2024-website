@@ -24,6 +24,7 @@ export function Player({ csrf }: { csrf: string }) {
     ['PLkFJEmWGjvn3IyBbEVdv6jTz2yo3QE9fT', 'Liana Flores'],
     ['PLkFJEmWGjvn2QjOBvGUwy092XTvpT3SX1', 'Summer Vibes'],
     ['PLkFJEmWGjvn3i_nCh5wg5pSp4EQFsqS7q', 'Recovery Mode'],
+    ['PLkFJEmWGjvn1zXzlPMlAIwsBPONqSBnTm', 'S K Y W A Y (Asthenic)'],
     ['PLkFJEmWGjvn2FQj8VrTy8nLtkbEJSCpph', 'Funk\'n\'Disco'],
   ];
   
