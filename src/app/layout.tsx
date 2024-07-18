@@ -25,7 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = cookies().get('theme')?.value;
+  const theme = cookies().get('theme')?.value as 'light' | 'dark';
   const token = cookies().get('csrf')!.value;
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}>

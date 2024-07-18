@@ -185,7 +185,7 @@ export function Player({ csrf }: { csrf: string }) {
         </div>
       </div>
       <div className="flex gap-half">
-        <button className="appearance-none focus:outline-none" onClick={() => {
+        <button title="Previous song" className="appearance-none focus:outline-none" onClick={() => {
           player.current?.mute();
           player.current?.previousVideo();
         }}>
@@ -193,7 +193,7 @@ export function Player({ csrf }: { csrf: string }) {
             <Prev />
           </Box>
         </button>
-        <button className="appearance-none focus:outline-none flex-1" onClick={() => {
+        <button title="Play song" className="appearance-none focus:outline-none flex-1" onClick={() => {
           if (isPlaying) {
             player.current?.pauseVideo();
           } else {
@@ -206,7 +206,7 @@ export function Player({ csrf }: { csrf: string }) {
             { isPlaying ? <Pause /> : <Play /> }
           </Box>
         </button>
-        <button className="appearance-none focus:outline-none" onClick={() => {
+        <button title="Next song" className="appearance-none focus:outline-none" onClick={() => {
           player.current?.mute();
           player.current?.nextVideo();
         }}>
