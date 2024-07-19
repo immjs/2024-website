@@ -134,7 +134,7 @@ export function Player({ csrf }: { csrf: string }) {
           </Box>
         </label>
         <select
-          className="cursor-pointer bg-cat-red flex-1 absolute inset-0 p-one rounded-one appearance-none focus:outline-none font-bold" 
+          className="cursor-pointer bg-cat-red flex-1 absolute inset-0 p-one rounded-one appearance-none focus:outline-none font-bold w-full" 
           id="media_player_select"
           defaultValue={curList}
           onChange={(e) => {
