@@ -95,9 +95,10 @@ export function Player({ csrf }: { csrf: string }) {
     setTimeout(() => {
       if (!isPlaying) {
         event.target.pauseVideo();
+        event.target.seekTo(0, true);
+      } else {
         event.target.unMute();
       }
-      event.target.seekTo(0, true);
     }, 500);
   };
 
