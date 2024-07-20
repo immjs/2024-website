@@ -86,7 +86,6 @@ export function Player({ csrf }: { csrf: string }) {
     // console.log(iframe);
     if (iframe) {
       iframe.tabIndex = -1;
-      iframe.loading = "lazy";
     }
     // access to player in all event handlers via event.target
     if (!isPlaying) event.target.mute();
@@ -185,6 +184,7 @@ export function Player({ csrf }: { csrf: string }) {
                 opts={opts}
                 onReady={onPlayerReady}
                 onStateChange={onPlayerStateChange}
+                loading="lazy"
               />
             </div>
             <Link
