@@ -134,7 +134,7 @@ export function Player({ csrf }: { csrf: string }) {
   // }, [iframeRefHack?.current?.container?.children]);
 
   return (
-    <div className="flex flex-col bg-cat-surface0 rounded-one gap-half">
+    <div className="flex flex-col rounded-one gap-half">
       <div className="relative bright-bg">
         <label htmlFor="media_player_select">
           <Box
