@@ -48,7 +48,7 @@ export function BitsOfPersonality() {
           <div className="flex-1 m-minone mt-0 bg-[url(/homepage/building.svg)] bg-no-repeat bg-[position:left_max(0px,100%)]" />
         </Box>
         <form
-          className="h-fit flex flex-col rounded-one gap-half bg-cat-surface0"
+          className="h-fit flex flex-col rounded-one gap-half"
           method="POST"
           action="/reply_status"
         >
