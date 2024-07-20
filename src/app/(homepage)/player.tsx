@@ -84,7 +84,10 @@ export function Player({ csrf }: { csrf: string }) {
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
     const iframe = document.querySelector("iframe");
     // console.log(iframe);
-    if (iframe) iframe.tabIndex = -1;
+    if (iframe) {
+      iframe.tabIndex = -1;
+      iframe.loading = "lazy";
+    }
     // access to player in all event handlers via event.target
     if (!isPlaying) event.target.mute();
     event.target.playVideo();
