@@ -2,9 +2,9 @@
 
 import { Arrow } from "@/components/arrow";
 import { Box } from "@/components/box";
+import { Link } from "@/components/link";
 import { PrettyFrame } from "@/components/pretty_frame";
 import { H1, H2 } from "@/components/typo";
-import Link from "next/link";
 
 export default function Error() {
   return (
@@ -14,9 +14,11 @@ export default function Error() {
           <div className="w-[256px] h-[256px] p-half">
             <div className="w-full h-full rounded-one flex items-center shadow-[0px_0px_0.8rem_0.8rem] p-zero">
               <div className="flex-1 flex justify-center items-center font-mono text-6xl font-bold leading-[0.5]">
-                {'- -'}<br/>
-                4 4<br/>
-                &nbsp;0<br/>
+                {"- -"}
+                <br />
+                4 4<br />
+                &nbsp;0
+                <br />
                 &nbsp;-
               </div>
             </div>
@@ -24,7 +26,9 @@ export default function Error() {
           <div className="flex-1 flex justify-center flex-col gap-4">
             <span>
               <H1 semantic>Not found</H1>
-              <H2 semantic>We don&apos;t have the ressource you&apos;re looking for.</H2>
+              <H2 semantic>
+                We don&apos;t have the ressource you&apos;re looking for.
+              </H2>
             </span>
             <p>I did tell you the website was a work in progress</p>
             <Link href="/" title="Go back to homepage" className="w-full">

@@ -27,13 +27,20 @@ export function MyBlogPosts() {
         datePublished="7th of July, 2024"
         blogpostColor="peach"
       />
-      <Box className="bright-bg bg-cat-pink" title="/blog">
+      <Box className="bright-bg bg-pink" title="/blog">
         <div className="flex gap-2 items-center">
           <span className="font-bold">More blog posts</span>
           <Arrow />
         </div>
       </Box>
-      <DoodleResp alt="Doodle of me annoying my friends away" src={`/homepage/doodles/${theme}/blogposts.svg`} posx="left" dx={-256} posy="bottom" dy={0} />
+      <DoodleResp
+        alt="Doodle of me annoying my friends away"
+        src={`/homepage/doodles/${theme}/blogposts.svg`}
+        posx="left"
+        dx={-256}
+        posy="bottom"
+        dy={0}
+      />
     </Section>
   );
 }

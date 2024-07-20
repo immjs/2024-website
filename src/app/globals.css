@@ -8,12 +8,90 @@ html {
     @screen xl {
         font-size: 20px;
     }
+    --text-pink: 77, 14, 59;
+    --text-red: 58, 11, 24;
+    --text-peach: 73, 43, 12;
+    --text-yellow: 95, 70, 16;
+    --text-green: 23, 77, 19;
+    --text-mauve: 54, 17, 97;
+    --text-lavender: 15, 25, 89;
+    --text-black: var(--ctp-crust);
+    --bg-white: var(--ctp-text);
 }
 
-.cat-latte .\!bg-black {
+/* .cat-mocha {
+    --text-pink: #4d0e3b;
+    --text-red: #3a0b18;
+    --text-peach: #492b0c;
+    --text-green: #174d13;
+    --text-mauve: #361161;
+    --text-lavender: #0f1959;
+}
+.cat-latte {
+    --text-pink: #480135;
+    --text-red: #44010f;
+    --text-peach: #452b07;
+    --text-green: #062000;
+    --text-mauve: #280458;
+    --text-lavender: #08134b;
+} */
+.cat-latte {
+    --text-pink: 72, 1, 53;
+    --text-red: 68, 1, 15;
+    --text-peach: 84, 31, 1;
+    --text-yellow: 69, 43, 7;
+    --text-green: 6, 32, 0;
+    --text-mauve: 40, 4, 88;
+    --text-lavender: 8, 19, 75;
+    --text-black: var(--ctp-text);
+    --bg-white: var(--ctp-base);
+}
+
+.bg-pink {
+    @apply bg-cat-pink;
+    color: rgb(var(--text-pink));
+    --ctp-text: var(--text-pink);
+}
+.bg-red {
+    @apply bg-cat-red;
+    color: rgb(var(--text-red));
+    --ctp-text: var(--text-red);
+}
+.bg-peach {
+    @apply bg-cat-peach;
+    color: rgb(var(--text-peach));
+    --ctp-text: var(--text-peach);
+}
+.bg-yellow {
+    @apply bg-cat-yellow;
+    color: rgb(var(--text-yellow));
+    --ctp-text: var(--text-yellow);
+}
+.bg-green {
+    @apply bg-cat-green;
+    color: rgb(var(--text-green));
+    --ctp-text: var(--text-green);
+}
+.bg-mauve {
+    @apply bg-cat-mauve;
+    color: rgb(var(--text-mauve));
+    --ctp-text: var(--text-mauve);
+}
+.bg-lavender {
+    @apply bg-cat-lavender;
+    color: rgb(var(--text-lavender));
+    --ctp-text: var(--text-lavender);
+}
+.bg-white {
+    background-color: rgb(var(--bg-white));
+    color: rgb(var(--text-black));
+    --ctp-text: var(--text-black);
+}
+
+/* .cat-latte .\!bg-black {
     color: rgb(var(--ctp-crust));
     --ctp-text: var(--ctp-crust);
-}
+} */
 
 /* ::-webkit-scrollbar {
   width: 1em;
@@ -35,26 +113,27 @@ html {
 }
 
 .h1::before {
-    content: '# ' !important; /* Tailwind should start complying. */
+    content: "# " !important; /* Tailwind should start complying. */
 }
 .h2::before {
-    content: '## ' !important; /* Tailwind should start complying. */
+    content: "## " !important; /* Tailwind should start complying. */
 }
 
-.bright-bg {
+/* .bright-bg {
     color: rgb(var(--ctp-crust));
     --ctp-text: var(--ctp-crust);
-}
+} */
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
 
 input::placeholder {
@@ -79,7 +158,7 @@ body {
     scrollbar-gutter: stable both-edges;
 }
 
-/* 
+/*
 *:focus {
     animation: none;
 } */
