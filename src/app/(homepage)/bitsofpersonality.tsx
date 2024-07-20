@@ -95,7 +95,7 @@ export function BitsOfPersonality() {
         </Box>
         <Box title="Tetra league rank" boxType={BoxLabelType.DESCRIPTN}>
           <div className="flex flex-col items-center justify-center flex-1 w-full">
-            <Image
+            <img
               src="/homepage/tetrio-ranks/a.png"
               alt="A rank"
               width={96}

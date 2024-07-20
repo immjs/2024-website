@@ -22,7 +22,7 @@ export function BlogPostCard({
         className="items-center xl:w-[256px]"
       >
         <div className="xl:flex-1 flex justify-center items-center">
-          <Image
+          <img
             alt={thumbnailAlt}
             src={`/blog/id:${id}/thumb_${theme}.svg`}
             width={192}

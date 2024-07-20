@@ -11,7 +11,7 @@ export function MyProjects() {
       <ProjectCard
         imageTitle="plurriel.lnk"
         image={
-          <Image
+          <img
             alt="Plurriel logo"
             src={`/homepage/plurriel.lnk_${theme}.svg`}
             width={256}
@@ -43,7 +43,7 @@ export function MyProjects() {
       <ProjectCard
         imageTitle="leboneleve.svg"
         image={
-          <Image
+          <img
             alt="Le Bon Élève logo"
             src={`/homepage/leboneleve.shortcut_${theme}.svg`}
             width={192}
@@ -68,7 +68,7 @@ export function MyProjects() {
       <ProjectCard
         imageTitle="minitel.svg"
         image={
-          <Image
+          <img
             alt="A flat design of the minitel"
             src="/homepage/minitel.svg.svg"
             width={184}
