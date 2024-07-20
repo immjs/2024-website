@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function PictureCard({ src, alt }: { src: string; alt: string }) {
   return (
-    <img
+    <Image
       alt={alt}
       src={src}
       width={0}
