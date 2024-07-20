@@ -56,6 +56,7 @@ export function Player({ csrf }: { csrf: string }) {
   const iframeRefHack = useRef<YouTube | null>(null);
 
   const onPlayerStateChange: YouTubeProps["onStateChange"] = (event) => {
+    console.log(event, YouTube.PlayerState);
     if (event.data === YouTube.PlayerState.PLAYING) {
       if (!isPlaying) {
         event.target.pauseVideo();
@@ -184,7 +185,6 @@ export function Player({ csrf }: { csrf: string }) {
                 opts={opts}
                 onReady={onPlayerReady}
                 onStateChange={onPlayerStateChange}
-                loading="lazy"
               />
             </div>
             <Link
