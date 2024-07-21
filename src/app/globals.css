@@ -88,10 +88,10 @@ html {
     --ctp-text: var(--text-black);
 }
 
-/* .cat-latte .\!bg-black {
+.cat-latte .\!bg-black {
     color: rgb(var(--ctp-crust));
     --ctp-text: var(--ctp-crust);
-} */
+}
 
 /* ::-webkit-scrollbar {
   width: 1em;
