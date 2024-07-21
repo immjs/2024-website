@@ -40,6 +40,23 @@ export async function POST(req: NextRequest) {
           ],
         },
       ],
+      components: [
+        {
+          type: 1,
+          components: [
+            {
+              id: "delete_status_reply",
+              type: 2,
+              style: 4,
+              label: "Delete thread",
+              emoji: {
+                name: "🧵",
+                animated: false,
+              },
+            },
+          ],
+        },
+      ],
     },
   });
 
