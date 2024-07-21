@@ -68,7 +68,7 @@ export function BitsOfPersonality({
           <Box
             title="Status"
             boxType={BoxLabelType.DESCRIPTN}
-            undertitle={`Published: ${(status.updatedat as Date).toLocaleString("en-US")}`}
+            undertitle={`Published: ${(status.updatedat as Date).toLocaleString("en-US", { timeZone: "UTC", dateStyle: "short" })} UTC`}
           >
             <pre className="text-wrap">
               {status.status
@@ -102,7 +102,7 @@ export function BitsOfPersonality({
       <div className={`${pageStyles.grid2} gap-one`}>
         <Box
           title="40 lines personal best"
-          undertitle={`${new Date(tetrio[0].at).toLocaleDateString()}, ${tetrio[0].piecesPlaced} pieces placed @ ${piecesPerSecond} PPS`}
+          undertitle={`${new Date(tetrio[0].at).toLocaleDateString("en-US", { timeZone: "UTC", dateStyle: "short" })} UTC, ${tetrio[0].piecesPlaced} pieces placed @ ${piecesPerSecond} PPS`}
           boxType={BoxLabelType.DESCRIPTN}
         >
           <div className="flex flex-col gap-half items-center justify-center flex-1 w-full">
@@ -117,7 +117,10 @@ export function BitsOfPersonality({
         <Box
           title="Tetra league rank"
           boxType={BoxLabelType.DESCRIPTN}
-          undertitle={new Date(tetrio[1].at).toLocaleDateString()}
+          undertitle={new Date(tetrio[1].at).toLocaleDateString("en-US", {
+            timeZone: "UTC",
+            dateStyle: "short",
+          })}
         >
           <div className="flex flex-col items-center justify-center flex-1 w-full">
             <img
