@@ -4,7 +4,6 @@ export function tetrioFetch(path: string, init: RequestInit = {}) {
     "X-Session-Id",
     `immjsdotdev-${process.env.NODE_ENV}-${path.replace(/\//g, "-")}`,
   );
-  console.log(newHeaders);
   return fetch(`https://ch.tetr.io/api${path}`, {
     ...init,
     headers: newHeaders,
