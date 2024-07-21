@@ -103,7 +103,7 @@ export function BitsOfPersonality({
       <div className={`${pageStyles.grid2} gap-one`}>
         <Box
           title="40 lines personal best"
-          undertitle={`${new Date(tetrio[0].at).toLocaleDateString("en-US", { timeZone: "UTC", dateStyle: "medium" })}, ${tetrio[0].piecesPlaced} pieces placed @ ${piecesPerSecond} PPS`}
+          undertitle={`${new Date(tetrio[0].at).toLocaleDateString("en-US", { timeZone: "UTC", dateStyle: "medium" })}, ${tetrio[0].piecesPlaced} pieces @ ${piecesPerSecond} PPS`}
           boxType={BoxLabelType.DESCRIPTN}
         >
           <div className="flex flex-col gap-half items-center justify-center flex-1 w-full">
