@@ -14,7 +14,7 @@ const hun2 = localFont({ src: "./fonts/hun2.ttf" });
 // const config = localFont({ src: './fonts/cr.ttf' });
 const proFontWindows = localFont({ src: "./fonts/pfw.ttf" });
 
-export function BitsOfPersonality() {
+export function BitsOfPersonality({ status }: { status: any }) {
   const theme = useTheme();
   const token = useToken();
   return (
@@ -52,9 +52,16 @@ export function BitsOfPersonality() {
           method="POST"
           action="/reply_status"
         >
-          <Box title="Status" boxType={BoxLabelType.DESCRIPTN}>
+          <Box
+            title="Status"
+            boxType={BoxLabelType.DESCRIPTN}
+            undertitle={`Published: ${(status.updatedat as Date).toLocaleString("en-US")}`}
+          >
             <pre className="text-wrap">
-              {"<immjs> The website's lookin good! (I think...)"}
+              {status.status
+                .split("\n")
+                .map((v: any) => `<immjs> ${v}`)
+                .join("\n")}
             </pre>
           </Box>
           <input hidden name="csrf" value={token} readOnly />

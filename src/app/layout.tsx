@@ -5,7 +5,6 @@ import { dmSans, spaceGrotesk, spaceMono } from "@/components/fonts";
 
 import { cookies } from "next/headers";
 import { ApplyContexts } from "./layout_contexts";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://immjs.dev"),
@@ -25,8 +24,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = cookies().get("theme")?.value as "light" | "dark";
-  const token = cookies().get("csrf")!.value;
   return (
     <html
       lang="en"
@@ -35,9 +32,7 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/favicon.png" />
       </head>
-      <ApplyContexts ogTheme={theme || "dark"} csrf={token}>
-        {children}
-      </ApplyContexts>
+      {children}
     </html>
   );
 }

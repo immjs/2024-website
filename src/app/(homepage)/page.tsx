@@ -1,23 +1,15 @@
-"use client";
+import { getTheme } from "@/components/theme-server";
+import { ApplyContexts } from "../layout_contexts";
+import { Home } from "./page-client";
+import { getToken } from "@/components/csrf-server";
+import { sql } from "@vercel/postgres";
 
-import { Introduction } from "./introduction";
-import { MyProjects } from "./myprojects";
-import { MyBlogPosts } from "./myblogposts";
-import { MyPhotography } from "./myphotography";
-import { BitsOfPersonality } from "./bitsofpersonality";
-import { MySocials } from "./mysocials";
+export default async function Page() {
+  const status = await sql`SELECT * FROM Status LIMIT 1;`;
 
-export default function Home() {
   return (
-    <div className="flex justify-center items-center px-6 py-[calc(50vh-125px-4.8rem)] pb-0 xl:pb-[320px] gutter-both-edges">
-      <main className="flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[800px]">
-        <Introduction />
-        <MyProjects />
-        <MyBlogPosts />
-        <MyPhotography />
-        <BitsOfPersonality />
-        <MySocials />
-      </main>
-    </div>
+    <ApplyContexts ogTheme={getTheme()} csrf={getToken()}>
+      <Home status={status.rows[0]} />
+    </ApplyContexts>
   );
 }
