@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
           type: 1,
           components: [
             {
-              id: "delete_status_reply",
+              custom_id: "delete_status_reply",
               type: 2,
               style: 4,
               label: "Delete thread",
