@@ -9,7 +9,7 @@ export function ApplyContexts({ children, ogTheme, csrf }: ApplyContextsProps) {
   const [theme, setTheme] = useState<"light" | "dark">(ogTheme);
   return (
     <body
-      className={`bg-cat-crust theme-setter ${theme === "light" ? "cat-latte" : ""}`}
+      className={`theme-setter ${theme === "light" ? "cat-latte bg-cat-surface0" : "bg-cat-crust"}`}
     >
       <SpeedInsights />
       <LightBtn theme={theme} setTheme={setTheme} token={csrf} />
