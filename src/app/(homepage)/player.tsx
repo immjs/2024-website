@@ -9,8 +9,7 @@ import { Next } from "@/components/icons/next";
 import { ChevDown } from "@/components/icons/chev_down";
 import { useEffect, useRef, useState } from "react";
 import { Pause } from "@/components/icons/pause";
-import { H1 } from "@/components/typo";
-import { useToken } from "@/components/csrf";
+import seedrandom from "seedrandom";
 import { Link } from "@/components/link";
 
 export function Player({ csrf }: { csrf: string }) {
@@ -28,21 +27,8 @@ export function Player({ csrf }: { csrf: string }) {
     ["PLkFJEmWGjvn2FQj8VrTy8nLtkbEJSCpph", "Funk'n'Disco"],
   ];
 
-  // We are just looking for determinism
-  function txtToInt(txt: string) {
-    let view = new DataView(new TextEncoder().encode(txt).buffer, 0);
-    return view.getBigUint64(0, true);
-  }
-  function mulberry32(a: number) {
-    return function () {
-      let t = (a += 0x6d2b79f5);
-      t = Math.imul(t ^ (t >>> 15), t | 1);
-      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
-  }
   const randomIdxDeterministic = Math.floor(
-    mulberry32(Number(txtToInt(csrf)))() * playlists.length,
+    seedrandom(csrf)() * playlists.length,
   );
 
   const [isPlaying, setIsPlaying] = useState(false);

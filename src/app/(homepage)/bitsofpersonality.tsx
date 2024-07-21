@@ -14,9 +14,22 @@ const hun2 = localFont({ src: "./fonts/hun2.ttf" });
 // const config = localFont({ src: './fonts/cr.ttf' });
 const proFontWindows = localFont({ src: "./fonts/pfw.ttf" });
 
-export function BitsOfPersonality({ status }: { status: any }) {
+export function BitsOfPersonality({
+  status,
+  tetrio,
+}: {
+  status: any;
+  tetrio: TetrioData;
+}) {
   const theme = useTheme();
   const token = useToken();
+  const minutes = Math.floor(tetrio[0].time / 60000);
+  const seconds = Math.floor(tetrio[0].time / 1000) % 60;
+  const milliseconds = tetrio[0].time % 1000;
+  const piecesPerSecond = (
+    tetrio[0].piecesPlaced /
+    (tetrio[0].time / 1000)
+  ).toFixed(2);
   return (
     <Section name="Bits of Personality">
       <div className={`${pageStyles.grid1} gap-one`}>
@@ -89,28 +102,33 @@ export function BitsOfPersonality({ status }: { status: any }) {
       <div className={`${pageStyles.grid2} gap-one`}>
         <Box
           title="40 lines personal best"
-          undertitle="5 days ago, 108 pieces @ 1.78 PPS"
+          undertitle={`${new Date(tetrio[0].at).toLocaleDateString()}, ${tetrio[0].piecesPlaced} pieces placed @ ${piecesPerSecond} PPS`}
           boxType={BoxLabelType.DESCRIPTN}
         >
           <div className="flex flex-col gap-half items-center justify-center flex-1 w-full">
             <span
               className={`text-[4.8rem] font-bold drop-shadow-[0px_0.25rem_rgba(var(--ctp-text),0.75)] ${hun2.className}`}
             >
-              1:00<small>.620</small>
+              {minutes}:{String(seconds).padStart(2, "0")}
+              <small>.{String(milliseconds).padStart(3, "0")}</small>
             </span>
           </div>
         </Box>
-        <Box title="Tetra league rank" boxType={BoxLabelType.DESCRIPTN}>
+        <Box
+          title="Tetra league rank"
+          boxType={BoxLabelType.DESCRIPTN}
+          undertitle={new Date(tetrio[1].at).toLocaleDateString()}
+        >
           <div className="flex flex-col items-center justify-center flex-1 w-full">
             <img
-              src="/homepage/tetrio-ranks/a.png"
+              src={`/homepage/tetrio-ranks/${tetrio[1].rank}.png`}
               alt="A rank"
               width={96}
               height={96}
               draggable={false}
             />
-            <span className={`leading-[1em] ${proFontWindows.className}`}>
-              @ 14075.42 TR
+            <span className="leading-[1em]">
+              @ {tetrio[1].rating.toFixed(1)} TR
             </span>
           </div>
         </Box>
@@ -135,3 +153,16 @@ export function BitsOfPersonality({ status }: { status: any }) {
     </Section>
   );
 }
+
+export type TetrioData = [
+  {
+    time: number;
+    piecesPlaced: number;
+    at: number;
+  },
+  {
+    rank: string;
+    rating: number;
+    at: number;
+  },
+];
