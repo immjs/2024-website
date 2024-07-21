@@ -90,6 +90,7 @@ export function BitsOfPersonality({
                   type="text"
                   placeholder="Reply to status..."
                   id="reply"
+                  autoComplete="off"
                 />
               </div>
             </label>
