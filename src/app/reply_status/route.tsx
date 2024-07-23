@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     reply.length < 2 ||
     reply.length > 400
   ) {
-    return new NextResponse("Malforemd request", { status: 400 });
+    return new NextResponse("Malformed request", { status: 400 });
   }
 
   const {
