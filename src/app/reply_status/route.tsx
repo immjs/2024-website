@@ -5,6 +5,16 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   const body = await req.formData();
+  const reply = body.get("reply");
+  if (
+    !reply ||
+    reply instanceof File ||
+    reply.length < 2 ||
+    reply.length > 400
+  ) {
+    return new NextResponse("Malforemd request", { status: 400 });
+  }
+
   const {
     rows: [{ status, discordid }],
   } = await sql`SELECT * FROM Status LIMIT 1;`;

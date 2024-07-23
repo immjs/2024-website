@@ -90,6 +90,9 @@ export function BitsOfPersonality({
                   type="text"
                   placeholder="Reply to status..."
                   id="reply"
+                  required
+                  minLength={2}
+                  maxLength={400}
                   autoComplete="off"
                 />
               </div>

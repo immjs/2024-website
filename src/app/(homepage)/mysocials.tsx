@@ -16,7 +16,7 @@ export function MySocials() {
   return (
     <Section name="My Socials">
       <div className={`${pageStyles.grid3} gap-one`}>
-        <Link href="https://discord.com/">
+        <Link href="https://discord.com/users/443126331807629333">
           <Box title="://discord.com" className="bright-bg bg-lavender">
             <div className="flex gap-half">
               <Discord />
