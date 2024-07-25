@@ -31,6 +31,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="shortcut icon" href="/favicon.png" />
+        <meta name="darkreader-lock" />
       </head>
       {children}
     </html>
