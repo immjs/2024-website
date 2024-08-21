@@ -24,7 +24,6 @@ export function Home({ status, tetrio }: { status: any; tetrio: TetrioData }) {
       <main className="flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[800px]">
         <Introduction />
         <MyProjects />
-        <MyBlogPosts />
         <MyPhotography />
         <BitsOfPersonality status={status} tetrio={tetrio} />
         <MySocials />
