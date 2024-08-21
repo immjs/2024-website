@@ -103,6 +103,33 @@ export function BitsOfPersonality({
           </div>
         </form>
       </div>
+      <div className="flex flex-col md:flex-row gap-one">
+        <Box
+          className="!bg-black w-full md:w-fit h-fit"
+          title="Navlink Ads"
+          boxType={BoxLabelType.DESCRIPTN}
+        >
+          <div className="flex justify-center items-center">
+            <iframe
+              width="180"
+              height="180"
+              style={{ border: "none" }}
+              src="https://dimden.neocities.org/navlink/"
+              name="neolink"
+              tabIndex={-1}
+            ></iframe>
+          </div>
+        </Box>
+        <Box
+          className="w-full flex-grow md:basis-0"
+          title="88x31 badges"
+          boxType={BoxLabelType.DESCRIPTN}
+        >
+          <div className="flex-grow flex justify-center items-center">
+            It&apos;s kind of empty right now
+          </div>
+        </Box>
+      </div>
       <div className={`${pageStyles.grid2} gap-one`}>
         <Box
           title="40 lines personal best"
