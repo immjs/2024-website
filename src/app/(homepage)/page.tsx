@@ -11,29 +11,29 @@ export default async function Page() {
     (async () => {
       try {
         const {
-          records: {
-            "40l": { record },
-          },
-        } = await tetrioFetch(`/users/${process.env.TETRIO_USERNAME}/records`);
-        const { user } = await tetrioFetch(
+          record: record40l,
+        } = await tetrioFetch(`/users/${process.env.TETRIO_USERNAME}/summaries/40l`);
+        const recordleague = await tetrioFetch(`/users/${process.env.TETRIO_USERNAME}/summaries/league`);
+        const user = await tetrioFetch(
           `/users/${process.env.TETRIO_USERNAME}`,
         );
         const { news } = await tetrioFetch(`/news/user_${user._id}`);
         return [
           {
-            time: record.endcontext.finalTime as number,
-            piecesPlaced: record.endcontext.piecesplaced as number,
-            at: new Date(record.ts).getTime(),
+            time: record40l.results.stats.finaltime as number,
+            piecesPlaced: record40l.results.stats.piecesplaced as number,
+            at: new Date(record40l.ts).getTime(),
           },
           {
-            rank: user.league.rank as string,
-            rating: user.league.rating as number,
+            rank: recordleague.rank as string,
+            rating: recordleague.tr as number,
             at: new Date(
-              news.find((v: any) => v.type === "rankup" && v.data.rank).ts,
+              news.find((v: any) => v.type === "rankup" && v.data.rank)?.ts || 0,
             ).getTime(),
           },
         ];
       } catch (err) {
+        console.log(err);
         return [
           {
             time: -1,
