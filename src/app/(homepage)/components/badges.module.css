@@ -1,0 +1,30 @@
+.badge img {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-pixelated;
+    image-rendering: pixelated;
+    width: 88px;
+    height: 31px;
+}
+
+.container {
+    animation: marquee-like linear 12s infinite;
+}
+
+.container > * {
+    overflow: visible;
+}
+
+.container:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-like {
+    0% {
+        transform: translate(-100px);
+    }
+    100% {
+        transform: translate(-922px);
+    }
+}
