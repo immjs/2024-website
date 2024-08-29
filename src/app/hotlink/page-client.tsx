@@ -6,14 +6,15 @@ import { Link } from "@/components/link";
 import { H1, H2 } from "@/components/typo";
 
 export default function Success() {
+  const B = () => <br className="select-none" />;
   return (
     <div className="flex justify-center items-center px-6 py-[calc(50vh-125px)]">
       <main className="flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[800px]">
         <div className="flex xl:flex-row flex-col gap-two items-center">
           <div className="w-[256px] h-[256px] p-half">
             <div className="w-full h-full rounded-one flex items-center shadow-[0px_0px_0.8rem_0.8rem] shadow-cat-green p-zero">
-              <div className="flex-1 text-cat-green w-full font-mono break-all p-one">
-                &lt;a href=&quot;https://immjs.dev/hotlink&quot;&gt;&lt;img src=&quot;/88x31s/immjs.dev.gif&quot;/&gt;&lt;a&gt;
+              <div className="flex-1 flex justify-center text-cat-green w-full font-mono text-nowrap h-min p-half appearance-none bg-transparent">
+                &lt;a href=&quot;https:/<B />/immjs.dev/hotli<B />nk&quot;&gt;&lt;img src=&quot;ht<B />tps://immjs.dev/<B />88x31s/immjs.dev<B />.gif&quot;/&gt;&lt;a&gt;
               </div>
             </div>
           </div>
