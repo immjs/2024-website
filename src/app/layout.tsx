@@ -30,6 +30,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}
     >
       <head>
+        <link rel="me" href="https://abtmtr.link/blurbs/#NgD_UHH4p6weykeFeI0lw_zAHVskaXMQ" />
         <link rel="shortcut icon" href="/favicon.png" />
         <meta name="darkreader-lock" />
       </head>
