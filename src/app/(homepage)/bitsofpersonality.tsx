@@ -10,6 +10,7 @@ import { DoodleResp } from "@/components/doodle";
 import localFont from "next/font/local";
 import { Badges } from "./components/badges";
 import { useEffect, useState } from "react";
+import Palette from "./components/palette";
 
 // Font files can be colocated inside of `pages`
 const hun2 = localFont({ src: "./fonts/hun2.ttf" });
@@ -19,9 +20,11 @@ const proFontWindows = localFont({ src: "./fonts/pfw.ttf" });
 export function BitsOfPersonality({
   status,
   tetrio,
+  palette,
 }: {
   status: any;
   tetrio: TetrioData;
+  palette: [string, string, string],
 }) {
   const theme = useTheme();
   const token = useToken();
@@ -136,15 +139,7 @@ export function BitsOfPersonality({
           </Box>
         </div>
         <Box title="Aesthetically Pleasing Color Palette Webring" boxType={BoxLabelType.DESCRIPTN}>
-          <div className="w-full" dangerouslySetInnerHTML={{
-            __html: `<webring-container>
-              <config key="type" value="catppuccin-mocha"></config>
-              <config key="font" value="Overused Grotesk, Arial, sans-serif"></config>
-              <config key="fill" value="false"></config>
-              <script src="https://palette.nekoweb.org/webring.js"></script>
-            </webring-container>`,
-          }}>
-          </div>
+          <Palette palette={palette} />
         </Box>
         <div className={`${pageStyles.grid2} gap-one`}>
           <Box

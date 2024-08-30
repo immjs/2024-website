@@ -8,7 +8,7 @@ import { BitsOfPersonality, TetrioData } from "./bitsofpersonality";
 import { MySocials } from "./mysocials";
 import { useTheme } from "@/components/theme";
 
-export function Home({ status, tetrio }: { status: any; tetrio: TetrioData }) {
+export function Home({ status, tetrio, palette }: { status: any; tetrio: TetrioData, palette: [string, string, string] }) {
   const theme = useTheme();
 
   return (
@@ -25,7 +25,7 @@ export function Home({ status, tetrio }: { status: any; tetrio: TetrioData }) {
         <Introduction />
         <MyProjects />
         <MyPhotography />
-        <BitsOfPersonality status={status} tetrio={tetrio} />
+        <BitsOfPersonality status={status} tetrio={tetrio} palette={palette} />
         <MySocials />
       </main>
     </div>

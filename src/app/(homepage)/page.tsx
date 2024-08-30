@@ -4,9 +4,11 @@ import { Home } from "./page-client";
 import { getToken } from "@/components/csrf-server";
 import { sql } from "@vercel/postgres";
 import { tetrioFetch } from "@/lib/tetrio-fetch";
+import json5 from "json5";
+import { headers } from "next/headers";
 
 export default async function Page() {
-  const [status, [data40l, dataTetra]] = await Promise.all([
+  const [status, [data40l, dataTetra], [prev, host, next]] = await Promise.all([
     sql`SELECT * FROM Status LIMIT 1;`.then((v) => v.rows[0]),
     (async () => {
       try {
@@ -48,11 +50,28 @@ export default async function Page() {
         ];
       }
     })(),
+    (async () => {
+      const links = await fetch(`https://palette.nekoweb.org/sites.js?t=${Date.now()}`)
+          .then((v) => v.text())
+          .then((v) => v.match(/default ([^;]+);/i)?.[1]);
+
+      const host = headers().get('host')!;
+      if (!links) return [host, host, host];
+
+      const linksParsed: any[] = json5.parse(links);
+      const linkIndex = Math.max(0, linksParsed.findIndex((v) => v.hostname === host || v.extraUrl.includes(host)));
+    
+      const mod = (a: number, b: number) => ((a % b) + b) % b
+      const prev = linksParsed[mod(linkIndex - 1, linksParsed.length)];
+      const next = linksParsed[mod(linkIndex + 1, linksParsed.length)];
+
+      return [prev.hostname, host, next.hostname];
+    })(),
   ]);
 
   return (
     <ApplyContexts ogTheme={getTheme()} csrf={getToken()}>
-      <Home status={status} tetrio={[data40l, dataTetra]} />
+      <Home status={status} tetrio={[data40l, dataTetra]} palette={[prev, host, next]} />
     </ApplyContexts>
   );
 }
