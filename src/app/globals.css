@@ -198,3 +198,10 @@ body {
         margin-right: unset;
     }
 } */
+
+webring-container {
+    min-width: 100%;
+}
+webring-container > div {
+    padding: 0 !important;
+}
