@@ -9,6 +9,7 @@ import { Player } from "./player";
 import { DoodleResp } from "@/components/doodle";
 import localFont from "next/font/local";
 import { Badges } from "./components/badges";
+import { useEffect, useState } from "react";
 
 // Font files can be colocated inside of `pages`
 const hun2 = localFont({ src: "./fonts/hun2.ttf" });
@@ -31,6 +32,12 @@ export function BitsOfPersonality({
     tetrio[0].piecesPlaced /
     (tetrio[0].time / 1000)
   ).toFixed(2);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <Section name="Bits of Personality">
       <div className="flex flex-col gap-one">
@@ -116,10 +123,10 @@ export function BitsOfPersonality({
                 width="180"
                 height="180"
                 style={{ border: "none" }}
-                src="https://dimden.neocities.org/navlink/"
+                src="/navlink/"
                 name="neolink"
                 tabIndex={-1}
-              ></iframe>
+              />
             </div>
           </Box>
           <Box
