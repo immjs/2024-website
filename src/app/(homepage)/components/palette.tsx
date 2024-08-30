@@ -8,7 +8,7 @@ export default function Palette({ palette: [prev, host, next] }: { palette: [str
     <>
       <img src="https://palette.nekoweb.org/icons/catppuccin.png" alt="Catppuccin" title="Catppuccin" style={{ imageRendering: "pixelated", aspectRatio: "1 / 1", width: "30px" }} />
       <p>
-        <a><b>the aesthetically pleasing color palette webring</b></a>
+        <a href="https://palette.nekoweb.org"><b>the aesthetically pleasing color palette webring</b></a>
       </p>
       <p>
         you&apos;re currently at: {host}
