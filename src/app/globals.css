@@ -168,7 +168,7 @@ body {
 }
 @keyframes blinklight {
     0% {
-        filter: brightness(3);
+        filter: brightness(0.33);
     }
     100% {
         filter: brightness(1);
@@ -180,7 +180,7 @@ body {
 }
 @keyframes blink {
     0% {
-        filter: brightness(0.33);
+        filter: brightness(3);
     }
     100% {
         filter: brightness(1);
