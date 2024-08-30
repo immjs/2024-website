@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { Pause } from "@/components/icons/pause";
 import seedrandom from "seedrandom";
 import { Link } from "@/components/link";
+import playerStyles from "./player.module.css";
 
 export function Player({ csrf }: { csrf: string }) {
   const player = useRef<YouTubePlayer | null>(null);
@@ -69,9 +70,9 @@ export function Player({ csrf }: { csrf: string }) {
     event.target.setLoop(true);
   };
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
-    const iframe = document.querySelector("iframe");
+    const iframes = document.querySelectorAll("iframe");
     // console.log(iframe);
-    if (iframe) {
+    for (const iframe of [...iframes]) {
       iframe.tabIndex = -1;
     }
     // access to player in all event handlers via event.target
@@ -198,7 +199,7 @@ export function Player({ csrf }: { csrf: string }) {
           </div>
         </div>
       </div>
-      <div className="flex gap-half">
+      <div className={`${playerStyles.buttons} gap-half`}>
         <button
           title="Previous song"
           className="appearance-none focus:outline-none"
@@ -207,7 +208,7 @@ export function Player({ csrf }: { csrf: string }) {
             player.current?.previousVideo();
           }}
         >
-          <Box hasBorder className="cursor-pointer">
+          <Box hasBorder className="flex items-center cursor-pointer">
             <Prev />
           </Box>
         </button>
@@ -236,7 +237,7 @@ export function Player({ csrf }: { csrf: string }) {
             player.current?.nextVideo();
           }}
         >
-          <Box hasBorder className="cursor-pointer">
+          <Box hasBorder className="flex items-center cursor-pointer">
             <Next />
           </Box>
         </button>

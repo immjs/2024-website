@@ -1,0 +1,15 @@
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:    'b b'
+                            'a c';
+
+    & > *:nth-child(1) { grid-area: a; }
+    & > *:nth-child(2) { grid-area: b; }
+    & > *:nth-child(3) { grid-area: c; }
+
+    @media (min-width: 300px) {
+        display: flex;
+    }
+}

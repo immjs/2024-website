@@ -46,21 +46,21 @@ export function BitsOfPersonality({
           <Box
             title="2023/prologin.png"
             undertitle="34.3kb, 256 x 256"
-            className="!bg-black"
+            className="max-[384px]:max-h-[calc(10vw+200px)] max-[384px]:aspect-square !bg-black"
           >
             <div className="flex-1 bg-[url(/homepage/2023/prologin.png)] bg-contain bg-no-repeat bg-center" />
           </Box>
           <Box
             title="2024/cdr_fra.png"
             undertitle="34.3kb, 256 x 256"
-            className="!bg-black"
+            className="max-[384px]:max-h-[calc(10vw+200px)] max-[384px]:aspect-square !bg-black"
           >
             <div className="flex-1 bg-[url(/homepage/2024/cdr_fra.png)] bg-contain bg-no-repeat bg-center" />
           </Box>
           <Box
             title="2024/prologin.png"
             undertitle="34.3kb, 256 x 256"
-            className="!bg-black"
+            className="max-[384px]:max-h-[calc(10vw+200px)] max-[384px]:aspect-square !bg-black"
           >
             <div className="flex-1 bg-[url(/homepage/2024/prologin.png)] bg-contain bg-no-repeat bg-center" />
           </Box>
@@ -68,7 +68,7 @@ export function BitsOfPersonality({
             className="bg-white bg-[linear-gradient(0deg,rgb(var(--ctp-blue)),rgb(var(--ctp-sky)))] h-full bright-bg self-stretch"
             title="building.svg"
           >
-            <div className="flex-1 m-minone mt-0 bg-[url(/homepage/building.svg)] bg-no-repeat bg-[position:left_max(0px,100%)]" />
+            <div className="sm:flex-1 flex-shrink-0 aspect-[2/3] max-w-[300px] m-minone mt-0 bg-[url(/homepage/building.svg)] bg-no-repeat bg-[position:left_max(0px,100%)]" />
           </Box>
           <form
             className="h-fit flex flex-col rounded-one gap-half"
@@ -152,7 +152,7 @@ export function BitsOfPersonality({
                 className={`text-[4.8rem] font-bold drop-shadow-[0px_0.25rem_rgba(var(--ctp-text),0.75)] ${hun2.className}`}
               >
                 {minutes}:{String(seconds).padStart(2, "0")}
-                <small>.{String(milliseconds).padStart(3, "0")}</small>
+                <small className="max-[360px]:hidden">.{String(milliseconds).padStart(3, "0")}</small>
               </span>
             </div>
           </Box>

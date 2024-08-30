@@ -21,7 +21,7 @@ export function Home({ status, tetrio, palette }: { status: any; tetrio: TetrioD
           height={192}
         />
       </div>
-      <main className="flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[800px]">
+      <main className="w-full flex flex-col gap-two text-cat-text justify-center max-w-[512px] xl:max-w-[800px]">
         <Introduction />
         <MyProjects />
         <MyPhotography />

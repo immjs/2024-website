@@ -162,25 +162,25 @@ body {
 *:focus {
     animation: none;
 } */
-*:focus-visible {
+:not(iframe):focus-visible {
     outline: none;
     animation: 0.5s infinite alternate blinklight ease;
 }
 @keyframes blinklight {
     0% {
-        filter: brightness(2);
+        filter: brightness(3);
     }
     100% {
         filter: brightness(1);
     }
 }
 
-.cat-latte *:focus-visible {
+.cat-latte :not(iframe):focus-visible {
     animation: 0.5s infinite alternate blink ease;
 }
 @keyframes blink {
     0% {
-        filter: brightness(0.5);
+        filter: brightness(0.33);
     }
     100% {
         filter: brightness(1);
