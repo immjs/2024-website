@@ -65,7 +65,7 @@ export function Badges() {
       {
         badges
           .map(([url, Component], i, a) => (
-            <a href={url} className="[&:not(:focus-visible)>*]:hidden absolute -top-one -left-one -bottom-one -right-one" key={i}>
+            <a href={url} className="[&:not(:focus-visible)]:pointer-events-none [&:not(:focus-visible)>*]:hidden absolute -top-one -left-one -bottom-one -right-one" key={i}>
               <Box
                 title="88x31 badges"
                 boxType={BoxLabelType.DESCRIPTN}
