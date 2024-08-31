@@ -64,7 +64,7 @@ export function Badges() {
       </div>
       {
         badges
-          .map(([url, Component], i) => (
+          .map(([url, Component], i, a) => (
             <a href={url} className="[&:not(:focus-visible)>*]:hidden absolute -top-one -left-one -bottom-one -right-one" key={i}>
               <Box
                 title="88x31 badges"
@@ -73,7 +73,7 @@ export function Badges() {
               >
                 <div className="flex-1 w-full flex justify-center items-center gap-half flex-col [&>img]:w-[88px] [&>img]:h-[31px]">
                   <p className="overflow-ellipsis w-full overflow-hidden whitespace-nowrap text-center">
-                    Currently selecting<br />
+                    Currently selecting ({i + 1} / {a.length})<br />
                     <b>{url.replace('https://', '')}</b>
                   </p>
                   <Component />
