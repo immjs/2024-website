@@ -3,6 +3,7 @@ import customRules from "./badges.module.css";
 import { Box, BoxLabelType } from "@/components/box";
 
 const badges = [
+  ["https://immjs.dev/hotlink", () => <img src="/88x31s/immjs.dev.gif"/>],
   ["https://melankorin.net", () => <img src="https://melankorin.net/assets/img/buttons/button-2.gif" alt=""/>],
   ["https://dimden.dev", () => <img src="https://dimden.dev/services/images/88x31.gif"/>],
   ["https://sad.ovh", () => <img src="https://sad.ovh/assets/binkies/sadovh.png"/>],
@@ -17,7 +18,6 @@ const badges = [
   ["https://www.tanguy.cyou", () => <img src="https://www.tanguy.cyou/assets/img/links/button.webp"/>],
   ["https://micro.niko.lgbt", () => <img src="https://micro.niko.lgbt/assets/microbutton.png"/>],
   ["https://nat.envs.sh", () => <img src="/88x31s/nat.envs.sh.gif"/>],
-  ["https://immjs.dev/hotlink", () => <img src="/88x31s/immjs.dev.gif"/>],
 ] as const;
 
 const xys = [
