@@ -63,14 +63,14 @@ export default async function Page() {
           rating: -1,
           at: 0,
         },
-      ]), 500)),
+      ]), 1_000)),
     ]),
     (async () => {
       const links = await Promise.race([
         fetch(`https://palette.nekoweb.org/sites.js?t=${Date.now()}`)
           .then((v) => v.text())
           .then((v) => v.match(/default ([^;]+);/i)?.[1]),
-        new Promise<undefined>((r) => setTimeout(() => r(undefined), 500)),
+        new Promise<undefined>((r) => setTimeout(() => r(undefined), 1_000)),
       ]);
 
       const host = headers().get('host')!;
