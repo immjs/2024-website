@@ -3,9 +3,6 @@ import "./globals.css";
 
 import { dmSans, spaceGrotesk, spaceMono } from "@/components/fonts";
 
-import { cookies } from "next/headers";
-import { ApplyContexts } from "./layout_contexts";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://immjs.dev"),
   title: "immjs.dev",
@@ -30,7 +27,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${spaceGrotesk.variable} ${spaceMono.variable}`}
     >
       <head>
-        <link rel="me" href="https://abtmtr.link/blurbs/#NgD_UHH4p6weykeFeI0lw_zAHVskaXMQ" />
+        <link rel="me" href="https://abtmtr.link/blurbs/#X0AKNVWJUpFpl1uHHw9sxuxHCl3ZbLu8" />
         <link rel="shortcut icon" href="/favicon.png" />
         <meta name="darkreader-lock" />
       </head>
