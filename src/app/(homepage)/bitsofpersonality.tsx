@@ -151,7 +151,7 @@ export function BitsOfPersonality({
               <span
                 className={`text-[4.8rem] font-bold drop-shadow-[0px_0.25rem_rgba(var(--ctp-text),0.75)] ${hun2.className}`}
               >
-                {minutes}:{String(seconds).padStart(2, "0")}
+                {minutes ? `${minutes}:` : ''}{String(seconds).padStart(2, "0")}
                 <small className="max-[360px]:hidden">.{String(milliseconds).padStart(3, "0")}</small>
               </span>
             </div>
