@@ -30,7 +30,7 @@ export function BitsOfPersonality({
   const token = useToken();
   const minutes = Math.floor(tetrio[0].time / 60000);
   const seconds = Math.floor(tetrio[0].time / 1000) % 60;
-  const milliseconds = tetrio[0].time % 1000;
+  const milliseconds = Math.floor(tetrio[0].time % 1000);
   const piecesPerSecond = (
     tetrio[0].piecesPlaced /
     (tetrio[0].time / 1000)
