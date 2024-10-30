@@ -65,7 +65,7 @@ export function BitsOfPersonality({
             <div className="flex-1 bg-[url(/homepage/2024/prologin.png)] bg-contain bg-no-repeat bg-center" />
           </Box>
           <Box
-            className="bg-white bg-[linear-gradient(0deg,rgb(var(--ctp-blue)),rgb(var(--ctp-sky)))] h-full bright-bg self-stretch"
+            className="bg-white bg-[linear-gradient(0deg,rgb(var(--ctp-blue)),rgb(var(--ctp-sky)))] h-0 min-h-full bright-bg self-stretch"
             title="building.svg"
           >
             <div className="sm:flex-1 flex-shrink-0 aspect-[2/3] max-w-[300px] m-minone mt-0 bg-[url(/homepage/building.svg)] bg-no-repeat bg-[position:left_max(0px,100%)]" />
