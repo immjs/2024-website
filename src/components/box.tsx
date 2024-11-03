@@ -80,10 +80,10 @@ export function Box({
 
 interface BoxProps {
   actAs?: string;
-  title?: string;
+  title?: string | ReactNode;
   boxType?: BoxLabelType;
   children?: ReactNode;
-  undertitle?: string;
+  undertitle?: string | ReactNode;
   className?: string;
   hasBorder?: boolean;
 }

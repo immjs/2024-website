@@ -133,6 +133,7 @@ export function BitsOfPersonality({
           <Box
             className="w-full flex-grow md:basis-0"
             title="88x31 badges"
+            undertitle="Please hotlink me! (click on my badge!)"
             boxType={BoxLabelType.DESCRIPTN}
           >
             <Badges />
