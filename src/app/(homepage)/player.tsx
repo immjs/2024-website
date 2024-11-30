@@ -22,6 +22,7 @@ export function Player({ csrf }: { csrf: string }) {
     ["PLkFJEmWGjvn0MOxdlNqHGy87Fh77HF_QY", "Good Kid"],
     ["PLkFJEmWGjvn3MmWxoahEdJiuW9CXHAJkF", "Brekcore"],
     ["PLkFJEmWGjvn2QjOBvGUwy092XTvpT3SX1", "Summer Vibes"],
+    ["OLAK5uy_mMHh73Ncdj_bfVlmrlGPG68DDOY1kn-Iw", "SHINBANGUMI"],
     ["PLkFJEmWGjvn3IyBbEVdv6jTz2yo3QE9fT", "Liana Flores"],
     ["PLkFJEmWGjvn18C2b-JqJdhC2z4IFAJ4-Z", "Bad Snacks"],
     ["PLkFJEmWGjvn1zXzlPMlAIwsBPONqSBnTm", "S K Y W A Y (Asthenic)"],
