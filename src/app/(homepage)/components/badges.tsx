@@ -16,8 +16,8 @@ const badges = [
   ["https://bomberfish.ca", () => <img src="https://bomberfish.ca/buttons/button.gif" alt="BomberFish" title="BomberFish" />],
   ["https://thinliquid.dev", () => <img src="https://thinliquid.dev/thnlqd.png" alt="thinliquid's button" />],
   ["https://www.tanguy.cyou", () => <img src="https://www.tanguy.cyou/assets/img/links/button.webp"/>],
-  ["https://daudix.one", () => <img src="/88x31s/nat.envs.sh.gif"/>],
-  ["https://nat.envs.sh", () => <img src="/88x31s/daudix.one.gif"/>],
+  ["https://daudix.one", () => <img src="https://daudix.one/home/badges/daudix.gif"/>],
+  ["https://nat.envs.sh", () => <img src="/88x31s/nat.envs.sh.gif"/>],
 ] as const;
 
 const xys = [
