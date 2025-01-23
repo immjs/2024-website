@@ -17,7 +17,7 @@ export function Player({ csrf }: { csrf: string }) {
   const player = useRef<YouTubePlayer | null>(null);
 
   const playlists = [
-    ["PLkFJEmWGjvn1Z8uDE2jFHNL4RGj_5Z_Yy", "don't OD - a Femtanyl mix"],
+    ["PLkFJEmWGjvn1Z8uDE2jFHNL4RGj_5Z_Yy", "Do Femt Kids"],
     ["PLkFJEmWGjvn0JocWGMlNO8XLZOWn8P2B4", "Vapor Wing"],
     ["PLkFJEmWGjvn0MOxdlNqHGy87Fh77HF_QY", "Good Kid"],
     ["PLkFJEmWGjvn3MmWxoahEdJiuW9CXHAJkF", "Brekcore"],
