@@ -17,7 +17,7 @@ export function Home({ status, tetrio, palette }: { status: any; tetrio: TetrioD
         <img
           className="absolute select-none"
           src={`/homepage/doodles/${theme}/flags.svg`}
-          width={192}
+          width={384}
           height={192}
         />
       </div>
