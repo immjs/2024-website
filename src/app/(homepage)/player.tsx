@@ -26,7 +26,6 @@ export function Player({ csrf }: { csrf: string }) {
     ["PLkFJEmWGjvn3IyBbEVdv6jTz2yo3QE9fT", "Liana Flores"],
     ["PLkFJEmWGjvn18C2b-JqJdhC2z4IFAJ4-Z", "Bad Snacks"],
     ["PLkFJEmWGjvn1zXzlPMlAIwsBPONqSBnTm", "S K Y W A Y (Asthenic)"],
-    ["PLkFJEmWGjvn3i_nCh5wg5pSp4EQFsqS7q", "Recovery Mode"],
     ["PLkFJEmWGjvn2FQj8VrTy8nLtkbEJSCpph", "Funk'n'Disco"],
   ];
 
