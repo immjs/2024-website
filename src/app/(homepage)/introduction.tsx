@@ -34,7 +34,7 @@ export function Introduction() {
         <div className="lg:flex-1 flex flex-col gap-4">
           <span>
             <H1 semantic>
-              Hi, I&apos;m Juliet!{" "}
+              Hi, I&apos;m Juliette!{" "}
               <span className="opacity-ghost">(she/her)</span>
             </H1>
             <H2 semantic>(but please call me Informa)</H2>
