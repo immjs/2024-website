@@ -7,17 +7,19 @@ import { Play } from "@/components/icons/play";
 import { Prev } from "@/components/icons/prev";
 import { Next } from "@/components/icons/next";
 import { ChevDown } from "@/components/icons/chev_down";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Pause } from "@/components/icons/pause";
 import seedrandom from "seedrandom";
 import { Link } from "@/components/link";
 import playerStyles from "./player.module.css";
+import { useToken } from "./csrf";
 
-export function Player({ csrf }: { csrf: string }) {
+export function Player({ className }: { className?: string }) {
   const player = useRef<YouTubePlayer | null>(null);
 
   const playlists = [
     ["PLkFJEmWGjvn1Z8uDE2jFHNL4RGj_5Z_Yy", "Do Femt Kids"],
+    ["PLkFJEmWGjvn0JLzhiiJ1rg3ei1oxfMGK9", "Yellow Mixtape"],
     ["PLkFJEmWGjvn0JocWGMlNO8XLZOWn8P2B4", "Vapor Wing"],
     ["PLkFJEmWGjvn0MOxdlNqHGy87Fh77HF_QY", "Good Kid"],
     ["PLkFJEmWGjvn3MmWxoahEdJiuW9CXHAJkF", "Brekcore"],
@@ -29,6 +31,7 @@ export function Player({ csrf }: { csrf: string }) {
     ["PLkFJEmWGjvn2FQj8VrTy8nLtkbEJSCpph", "Funk'n'Disco"],
   ];
 
+  const csrf = useToken();
   const randomIdxDeterministic = Math.floor(
     seedrandom(csrf)() * playlists.length,
   );
@@ -122,7 +125,7 @@ export function Player({ csrf }: { csrf: string }) {
   // }, [iframeRefHack?.current?.container?.children]);
 
   return (
-    <div className="flex flex-col rounded-one gap-half">
+    <div className={`flex flex-col rounded-one gap-half ${className ?? ""}`}>
       <div className="relative bright-bg">
         <label htmlFor="media_player_select">
           <Box

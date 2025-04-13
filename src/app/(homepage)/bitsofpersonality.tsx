@@ -5,7 +5,7 @@ import pageStyles from "./page.module.css";
 import { Box, BoxLabelType } from "@/components/box";
 import { SendIcon } from "@/components/icons/send";
 import Image from "next/image";
-import { Player } from "./player";
+import { Player } from "../../components/player";
 import { DoodleResp } from "@/components/doodle";
 import localFont from "next/font/local";
 import { Badges } from "./components/badges";
@@ -178,7 +178,7 @@ export function BitsOfPersonality({
               </span>
             </div>
           </Box>
-          <Player csrf={useToken()} />
+          <Player />
           <Box
             title="rickroll.gif"
             undertitle="8.7mb, 320 x 240"
