@@ -9,7 +9,7 @@ export function LightBtn({ theme, setTheme, token }: LightBtnProps) {
   useEffect(() => setCookie("theme", theme, { maxAge: 31536000 }), [theme]);
   return (
     <form
-      className="absolute top-one right-one"
+      className="absolute top-one right-one z-50"
       method="POST"
       action="/change_theme"
     >
