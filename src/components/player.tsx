@@ -18,6 +18,7 @@ export function Player({ className }: { className?: string }) {
   const player = useRef<YouTubePlayer | null>(null);
 
   const playlists = [
+    ["PLkFJEmWGjvn3aBUWQBz1PUWHLtcKiGcpA", "Blurple studies"],
     ["PLkFJEmWGjvn1Z8uDE2jFHNL4RGj_5Z_Yy", "Do Femt Kids"],
     ["PLkFJEmWGjvn0JLzhiiJ1rg3ei1oxfMGK9", "Yellow Mixtape"],
     ["PLkFJEmWGjvn0JocWGMlNO8XLZOWn8P2B4", "Vapor Wing"],
