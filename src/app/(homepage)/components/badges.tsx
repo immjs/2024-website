@@ -7,7 +7,7 @@ const badges = [
   ["https://melankorin.net", () => <img src="https://melankorin.net/assets/img/buttons/button-2.gif" alt=""/>],
   ["https://dimden.dev", () => <img src="https://dimden.dev/services/images/88x31.gif"/>],
   ["https://sad.ovh", () => <img src="https://sad.ovh/assets/binkies/sadovh.png"/>],
-  ["https://abtmtr.link", () => <img src="https://cdn.abtmtr.link/site_content/88x31/abtmtr_link.png"/>],
+  ["https://abtmtr.link", () => <img src="https://cdn.abtmtr.link/site_content/88x31.png"/>],
   ["https://maia.crimew.gay", () => <img src="https://maia.crimew.gay/badges/maia.crimew.gay.png"/>],
   ["https://pocl.vip", () => <img src="https://pocl.vip/img/buttons/poclbutton.gif" alt="pocl.v button" title="he he hee its pockel vee"/>],
   ["https://enby.space", () => <img src="https://enby.space/media/badges/nbsp.gif"/>],
