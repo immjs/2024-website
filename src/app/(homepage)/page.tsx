@@ -66,24 +66,30 @@ export default async function Page() {
       ]), 1_000)),
     ]),
     (async () => {
-      const links = await Promise.race([
-        fetch(`https://palette.nekoweb.org/sites.js?t=${Date.now()}`)
-          .then((v) => v.text())
-          .then((v) => v.match(/default ([^;]+);/i)?.[1]),
-        new Promise<undefined>((r) => setTimeout(() => r(undefined), 1_000)),
-      ]);
+      try {
+        const links = await Promise.race([
+          fetch(`https://palette.nekoweb.org/sites.js?t=${Date.now()}`)
+            .then((v) => v.text())
+            .then((v) => v.match(/default ([^;]+);/i)?.[1]),
+          new Promise<undefined>((r) => setTimeout(() => r(undefined), 1_000)),
+        ]);
 
-      const host = headers().get('host')!;
-      if (!links) return [host, host, host];
+        const host = headers().get('host')!;
+        if (!links) return [host, host, host];
 
-      const linksParsed: any[] = json5.parse(links);
-      const linkIndex = Math.max(0, linksParsed.findIndex((v) => v.hostname === host || v.extraUrl.includes(host)));
-    
-      const mod = (a: number, b: number) => ((a % b) + b) % b
-      const prev = linksParsed[mod(linkIndex - 1, linksParsed.length)];
-      const next = linksParsed[mod(linkIndex + 1, linksParsed.length)];
+        const linksParsed: any[] = json5.parse(links);
+        const linkIndex = Math.max(0, linksParsed.findIndex((v) => v.hostname === host || v.extraUrl?.includes(host)));
+      
+        const mod = (a: number, b: number) => ((a % b) + b) % b
+        const prev = linksParsed[mod(linkIndex - 1, linksParsed.length)];
+        const next = linksParsed[mod(linkIndex + 1, linksParsed.length)];
 
-      return [prev.hostname, host, next.hostname];
+        return [prev.hostname, host, next.hostname];
+      } catch (err) {
+        console.error(err);
+
+        return [host, host, host]
+      }
     })(),
   ]);
 
