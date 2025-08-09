@@ -66,6 +66,9 @@ export default async function Page() {
       ]), 1_000)),
     ]),
     (async () => {
+      const host = headers().get('host')!;
+      if (!links) return [host, host, host];
+
       try {
         const links = await Promise.race([
           fetch(`https://palette.nekoweb.org/sites.js?t=${Date.now()}`)
@@ -73,9 +76,6 @@ export default async function Page() {
             .then((v) => v.match(/default ([^;]+);/i)?.[1]),
           new Promise<undefined>((r) => setTimeout(() => r(undefined), 1_000)),
         ]);
-
-        const host = headers().get('host')!;
-        if (!links) return [host, host, host];
 
         const linksParsed: any[] = json5.parse(links);
         const linkIndex = Math.max(0, linksParsed.findIndex((v) => v.hostname === host || v.extraUrl?.includes(host)));
