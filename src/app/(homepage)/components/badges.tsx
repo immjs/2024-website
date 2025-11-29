@@ -16,7 +16,7 @@ const badges = [
   ["https://bomberfish.ca", () => <img src="https://bomberfish.ca/buttons/button.gif" alt="BomberFish" title="BomberFish" />],
   ["https://polycarbonate.live", () => <img src="https://polycarbonate.live/badges/badge.gif" alt="Polycarbonate's button" />],
   ["https://www.reptilian.monster", () => <img src="https://www.reptilian.monster/assets/img/links/button.webp"/>],
-  ["https://daudix.one", () => <img src="https://daudix.one/home/badges/badges/daudix.gif"/>],
+  ["https://daudix.one", () => <img src="https://daudix.one/badges/badges/daudix.gif"/>],
   ["https://nat.envs.sh", () => <img src="/88x31s/nat.envs.sh.gif"/>],
 ] as const;
 
