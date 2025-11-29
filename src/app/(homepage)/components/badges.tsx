@@ -4,19 +4,19 @@ import { Box, BoxLabelType } from "@/components/box";
 
 const badges = [
   ["https://immjs.dev/hotlink", () => <img src="/88x31s/immjs.dev.gif"/>],
-  ["https://melankorin.net", () => <img src="https://melankorin.net/assets/img/buttons/button-2.gif" alt=""/>],
+  ["https://melankorin.net", () => <img src="https://melankorin.net/assets/img/buttons/button-2.gif"/>],
   ["https://dimden.dev", () => <img src="https://dimden.dev/services/images/88x31.gif"/>],
   ["https://sad.ovh", () => <img src="https://sad.ovh/assets/binkies/sadovh.png"/>],
   ["https://abtmtr.link", () => <img src="https://cdn.abtmtr.link/site_content/88x31.png"/>],
   ["https://maia.crimew.gay", () => <img src="https://maia.crimew.gay/badges/maia.crimew.gay.png"/>],
-  ["https://pocl.vip", () => <img src="https://pocl.vip/img/buttons/poclbutton.gif" alt="pocl.v button" title="he he hee its pockel vee"/>],
+  ["https://dinpixels.neocities.org/", () => <img src="https://dinpixels.neocities.org/src/img/buttons/dinbtn0.gif" alt="Dinpixel's website"/>],
   ["https://enby.space", () => <img src="https://enby.space/media/badges/nbsp.gif"/>],
   ["https://circulars.dev", () => <img src="https://circulars.dev/circular-88x31.gif"/>],
-  ["https://760ceb3b9c0ba4872cadf3ce35a7a494.neocities.org", () => <img src="https://760ceb3b9c0ba4872cadf3ce35a7a494.neocities.org/people/760ceb3b9c0ba4872cadf3ce35a7a494.png"/>],
+  ["https://rashid2580.nekoweb.org", () => <img src="https://rashid2580.nekoweb.org/aseets/button.png"/>],
   ["https://bomberfish.ca", () => <img src="https://bomberfish.ca/buttons/button.gif" alt="BomberFish" title="BomberFish" />],
-  ["https://thinliquid.dev", () => <img src="https://thinliquid.dev/thnlqd.png" alt="thinliquid's button" />],
-  ["https://www.tanguy.cyou", () => <img src="https://www.tanguy.cyou/assets/img/links/button.webp"/>],
-  ["https://daudix.one", () => <img src="https://daudix.one/home/badges/daudix.gif"/>],
+  ["https://polycarbonate.live", () => <img src="https://polycarbonate.live/badges/badge.gif" alt="Polycarbonate's button" />],
+  ["https://www.reptilian.monster", () => <img src="https://www.reptilian.monster/assets/img/links/button.webp"/>],
+  ["https://daudix.one", () => <img src="https://daudix.one/home/badges/badges/daudix.gif"/>],
   ["https://nat.envs.sh", () => <img src="/88x31s/nat.envs.sh.gif"/>],
 ] as const;
 
