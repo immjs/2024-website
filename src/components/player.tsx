@@ -81,7 +81,7 @@ export function Player({ className }: { className?: string }) {
       iframe.tabIndex = -1;
     }
     // access to player in all event handlers via event.target
-    if (!isPlaying) event.target.mute();
+    if (!isPlaying) event.target.pauseVideo();
     event.target.playVideo();
     player.current = event.target;
     setTimeout(() => {
