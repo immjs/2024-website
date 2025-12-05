@@ -211,7 +211,7 @@ export function Player({ className }: { className?: string }) {
           onClick={() => {
             player.current?.mute();
             player.current?.previousVideo();
-            player.current?.unMute();
+            if (isPlaying) player.current?.unMute();
           }}
         >
           <Box hasBorder className="flex items-center cursor-pointer">
@@ -241,7 +241,7 @@ export function Player({ className }: { className?: string }) {
           onClick={() => {
             player.current?.mute();
             player.current?.nextVideo();
-            player.current?.unMute();
+            if (isPlaying) player.current?.unMute();
           }}
         >
           <Box hasBorder className="flex items-center cursor-pointer">
