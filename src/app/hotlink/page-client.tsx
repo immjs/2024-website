@@ -14,7 +14,7 @@ export default function Success() {
           <div className="w-[256px] h-[256px] p-half">
             <div className="w-full h-full rounded-one flex items-center shadow-[0px_0px_0.8rem_0.8rem] shadow-cat-green p-zero">
               <div className="flex-1 flex justify-center text-cat-green w-full font-mono text-nowrap h-min p-half appearance-none bg-transparent">
-                &lt;a href=&quot;https:/<B />/immjs.dev/&quot;&gt;&lt;im<B />g src=&quot;https://i<B />mmjs.dev/88x31s/<B />immjs.dev.gif&quot;/&gt;&lt;<B />a&gt;
+                &lt;a href=&quot;https:/<B />/immjs.dev/&quot;&gt;&lt;im<B />g src=&quot;https://i<B />mmjs.dev/88x31s/<B />immjs.dev.gif&quot;/&gt;&lt;<B />/a&gt;
               </div>
             </div>
           </div>
