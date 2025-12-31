@@ -8,7 +8,7 @@ const badges = [
   ["https://dimden.dev", () => <img src="https://dimden.dev/services/images/88x31.gif"/>],
   ["https://sad.ovh", () => <img src="https://sad.ovh/assets/binkies/sadovh.png"/>],
   ["https://abtmtr.link", () => <img src="https://cdn.abtmtr.link/site_content/88x31.png"/>],
-  ["https://maia.crimew.gay", () => <img src="https://maia.crimew.gay/badges/maia.crimew.gay.png"/>],
+  ["https://reduxflakes.neocities.org/", () => <img src="https://reduxflakes.neocities.org/public/buttons/reduc_anim.gif"/>],
   ["https://dinpixels.neocities.org/", () => <img src="https://dinpixels.neocities.org/src/img/buttons/dinbtn0.gif" alt="Dinpixel's website"/>],
   ["https://enby.space", () => <img src="https://enby.space/media/badges/nbsp.gif"/>],
   ["https://circulars.dev", () => <img src="https://circulars.dev/circular-88x31.gif"/>],
