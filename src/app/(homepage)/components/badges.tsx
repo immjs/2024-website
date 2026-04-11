@@ -12,7 +12,7 @@ const badges = [
   ["https://dinpixels.neocities.org/", () => <img src="https://dinpixels.neocities.org/src/img/buttons/dinbtn0.gif" alt="Dinpixel's website"/>],
   ["https://enby.space", () => <img src="https://enby.space/media/badges/nbsp.gif"/>],
   ["https://circulars.dev", () => <img src="https://circulars.dev/circular-88x31.gif"/>],
-  ["https://rashid2580.nekoweb.org", () => <img src="https://rashid2580.nekoweb.org/aseets/button.png"/>],
+  ["https://kuna.fish", () => <img src="https://kuna.fish/badges/kuna.png"/>],
   ["https://bomberfish.ca", () => <img src="https://bomberfish.ca/buttons/button.gif" alt="BomberFish" title="BomberFish" />],
   ["https://polycarbonate.live", () => <img src="https://polycarbonate.live/badges/badge.gif" alt="Polycarbonate's button" />],
   ["https://www.reptilian.monster", () => <img src="https://www.reptilian.monster/assets/img/links/button.webp"/>],
