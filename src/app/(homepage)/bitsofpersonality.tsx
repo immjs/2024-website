@@ -10,7 +10,7 @@ import { DoodleResp } from "@/components/doodle";
 import localFont from "next/font/local";
 import { Badges } from "./components/badges";
 import { useEffect, useState } from "react";
-import Palette from "./components/palette";
+import SNWebring from "./components/snwebring";
 
 // Font files can be colocated inside of `pages`
 const hun2 = localFont({ src: "./fonts/hun2.ttf" });
@@ -20,11 +20,9 @@ const proFontWindows = localFont({ src: "./fonts/pfw.ttf" });
 export function BitsOfPersonality({
   status,
   tetrio,
-  palette,
 }: {
   status: any;
   tetrio: TetrioData;
-  palette: [string, string, string],
 }) {
   const theme = useTheme();
   const token = useToken();
@@ -139,8 +137,8 @@ export function BitsOfPersonality({
             <Badges />
           </Box>
         </div>
-        <Box title="Aesthetically Pleasing Color Palette Webring" boxType={BoxLabelType.DESCRIPTN}>
-          <Palette palette={palette} />
+        <Box title="Snug Nook Webring" boxType={BoxLabelType.DESCRIPTN}>
+          <SNWebring />
         </Box>
         <div className={`${pageStyles.grid2} gap-one`}>
           <Box
