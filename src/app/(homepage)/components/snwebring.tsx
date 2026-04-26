@@ -14,10 +14,10 @@ export default function SNWebring() {
         Webring of the community-focused community!
       </p>
       <p>
-        <a className="underline" href="https://snugnook.org/ring?action=previouw">&lt;-- Previous website</a>
+        <a className="underline" href="https://snugnook.org/ring/immjs.dev/previous">&lt;-- Previous website</a>
       </p>
       <p>
-        <a className="underline" href="https://snugnook.org/ring?action=next">--&gt; Next website</a>
+        <a className="underline" href="https://snugnook.org/ring/immjs.dev/next">--&gt; Next website</a>
       </p>
     </>
   );
