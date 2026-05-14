@@ -8,7 +8,7 @@ export function Introduction() {
   const theme = useTheme();
   return (
     <div className="flex flex-col items-center gap-16">
-      <Small>I try to be elegant but I end up being awkward</Small>
+      <Small>That website kinda meh, I should change it sometime</Small>
       <h1 className="hidden">Introduction</h1>
       <div className="flex gap-two flex-col xl:flex-row w-full">
         <div className="flex justify-center">
