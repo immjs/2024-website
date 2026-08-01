@@ -37,7 +37,7 @@ export function Introduction() {
               Hi, I&apos;m Juliette!{" "}
               <span className="opacity-ghost">(she/her)</span>
             </H1>
-            <H2 semantic>(but please call me Informa)</H2>
+            <H2 semantic>(but please call me Informei)</H2>
           </span>
           <p>
             I’m a 18 years old french student who codes for fun! My other
