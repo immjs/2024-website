@@ -17,7 +17,7 @@ const badges = [
   ["https://polycarbonate.live", () => <img src="https://polycarbonate.live/badges/badge.gif" alt="Polycarbonate's button" />],
   ["https://www.reptilian.monster", () => <img src="https://www.reptilian.monster/assets/img/links/button.webp"/>],
   ["https://daudix.one", () => <img src="https://daudix.one/badges/badges/daudix.gif"/>],
-  ["https://nat.envs.sh", () => <img src="/88x31s/nat.envs.sh.gif"/>],
+  ["https://kevadesu.github.io/", () => <img src="https://kevadesu.github.io/88x31.gif"/>],
 ] as const;
 
 const xys = [
