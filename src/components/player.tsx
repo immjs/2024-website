@@ -18,11 +18,13 @@ export function Player({ className }: { className?: string }) {
   const player = useRef<YouTubePlayer | null>(null);
 
   const playlists = [
+    ["PLC52Ng-hDXDs", "Liked Music"],
     ["PLkFJEmWGjvn3aBUWQBz1PUWHLtcKiGcpA", "Blurple studies"],
     ["PLkFJEmWGjvn1Z8uDE2jFHNL4RGj_5Z_Yy", "Do Femt Kids"],
     ["PLkFJEmWGjvn0JLzhiiJ1rg3ei1oxfMGK9", "Yellow Mixtape"],
     ["PLkFJEmWGjvn0JocWGMlNO8XLZOWn8P2B4", "Vapor Wing"],
     ["PLkFJEmWGjvn0MOxdlNqHGy87Fh77HF_QY", "Good Kid"],
+    ["PLkFJEmWGjvn2W4rtnnyI4NelW4QO-FC5F", "Tape Arcade"],
     ["PLkFJEmWGjvn3MmWxoahEdJiuW9CXHAJkF", "Brekcore"],
     ["PLkFJEmWGjvn2QjOBvGUwy092XTvpT3SX1", "Summer Vibes"],
     ["OLAK5uy_mMHh73Ncdj_bfVlmrlGPG68DDOY1kn-Iw", "SHINBANGUMI"],
