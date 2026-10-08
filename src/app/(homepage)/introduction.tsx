@@ -40,7 +40,7 @@ export function Introduction() {
             <H2 semantic>(but please call me Informei)</H2>
           </span>
           <p>
-            I’m a 18 years old french student who codes for fun! My other
+            I’m a 19 years old french student who codes for fun! My other
             hobbies are not really hobbies, more like variably lengthed
             obsessions of literally anything, such as The Minitel currently!
           </p>
